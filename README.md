@@ -1,5 +1,7 @@
-# cogs501
-COGS 501 - Linguistics and Formal Languages - Informatics Institute, METU
+#COGS 501 - Linguistics and Formal Languages - Informatics Institute, METU
+
+
+
 
 ## License
 
