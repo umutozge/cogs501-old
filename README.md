@@ -1,11 +1,3 @@
----
-description: 'cogs501-Fall2015'
-distribution: global
-keywords: 'Umut Ozge, Umut Özge, metu, cognitive science'
-resource-type: document
-title: 'COGS501-Formal Languages and Linguistics-Fall2016'
-...
-
 COGS 501 - Formal Languages and Linguistics - METU 
 -------------------------------------------------------
 
