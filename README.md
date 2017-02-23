@@ -20,8 +20,8 @@ of the course.
 **Outline**
 
 - [General introduction](https://github.com/umutozge/cogs501/blob/master/notes/00_cogs501-general-introduction.pdf)
-- Natural language morphology
 - Basics of formal languages
+- Natural language morphology
 - Regular languages and finite automata
 - Morphology and computation
 - Grammars, derivations, context-free languages
@@ -32,15 +32,16 @@ of the course.
 
 **Conduct**
 
-Weekly lectures  
+Weekly lectures.
 
 **Evaluation**
 
 |Category| Date | Weight |
 :---|:---|---:
-6 Quizes, best 5 counted  | TBA | 50%
-Homework  | TBA | 15%
-Final exam | TBA | 35%
+5 Quizes, best 4 counted  | 3/16 | 40%
+ | 4/6 |   
+Homework  | TBA | 20%
+Final exam | TBA | 40%
 
 
 
