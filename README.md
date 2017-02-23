@@ -38,21 +38,34 @@ Weekly lectures.
 
 |Category| Date | Weight |
 :---|:---|---:
-5 Quizes, best 4 counted  | 3/16 | 40%
- | 4/6 |   
+5 Quizes, best 4 counted  | Mar 16 | 40%
+ | Apr 6  |   
+ | Apr 27 |   
+ | May 11 |   
+ | May 25 |   
 Homework  | TBA | 20%
 Final exam | TBA | 40%
 
+**Material**
 
+Lecture notes will be available on this site, and hardcopy at class.  
+You may consult other sources as needed, such as: 
 
-
-
-**Reference:**
-
-Partee, B. H., ter Meulen, A., and Wall, R. E. (1990). *Mathematical Methods in Linguistics*. Kluwer, Dodrecht.
-Tallerman, M. (2011). *Understanding Syntax*. Hodder Education, Croydon, UK.  
+Partee, B. H., ter Meulen, A., and Wall, R. E. (1990). *Mathematical Methods in Linguistics*. Kluwer, Dodrecht.  
 Payne, T. (2006). *Exploring Language Structure: A Student's Guide*.  Cambridge University Press.  
+Tallerman, M. (2011). *Understanding Syntax*. Hodder Education, Croydon, UK.  
 
+
+**Attendance**
+
+Not formally required; but past experience shows attendance is a robust
+predictor of success in this course. Make-up quizzes are possible in case of a
+medical issue.  
+
+**Some past runs**
+
+- [Fall 2015](http://users.metu.edu.tr/umozge/cr/cogs501Fall2015/)
+- [Fall 2016](http://users.metu.edu.tr/umozge/cr/cogs501Fall2016/)
 
 ### License
 
