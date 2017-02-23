@@ -17,7 +17,7 @@ of the course.
 
 **Time and place:** Thursdays, 14:40-17:30, II-03 (last class on May 25, 2017).
 
-**Outline**
+###Outline
 
 - [General introduction](https://github.com/umutozge/cogs501/blob/master/notes/00_cogs501-general-introduction.pdf)
 - Basics of formal languages
@@ -30,11 +30,17 @@ of the course.
 - Beyond context-freeness
 - Turing machines   
 
-**Conduct**
+###Material
 
-Weekly lectures.
+Lecture notes will be available on this site, and hardcopy at class.  
+You may consult other sources as needed, such as: 
 
-**Evaluation**
+Partee, B. H., ter Meulen, A., and Wall, R. E. (1990). *Mathematical Methods in Linguistics*. Kluwer, Dodrecht.  
+Payne, T. (2006). *Exploring Language Structure: A Student's Guide*.  Cambridge University Press.  
+Tallerman, M. (2011). *Understanding Syntax*. Hodder Education, Croydon, UK.  
+
+
+###Evaluation
 
 |Category| Date | Weight |
 :---|:---|---:
@@ -46,23 +52,23 @@ Weekly lectures.
 Homework  | TBA | 20%
 Final exam | TBA | 40%
 
-**Material**
 
-Lecture notes will be available on this site, and hardcopy at class.  
-You may consult other sources as needed, such as: 
-
-Partee, B. H., ter Meulen, A., and Wall, R. E. (1990). *Mathematical Methods in Linguistics*. Kluwer, Dodrecht.  
-Payne, T. (2006). *Exploring Language Structure: A Student's Guide*.  Cambridge University Press.  
-Tallerman, M. (2011). *Understanding Syntax*. Hodder Education, Croydon, UK.  
-
-
-**Attendance**
+###Attendance
 
 Not formally required; but past experience shows attendance is a robust
 predictor of success in this course. Make-up quizzes are possible in case of a
 medical issue.  
 
-**Some past runs**
+###Various
+
+- Mobile phones and similar devices must be in silent mode and in bags during
+  exams.
+- All ethical rules endorsed by METU apply (check the official syllabus
+  [here](https://odtusyllabus.metu.edu.tr/)).
+- Please feel free to contact me in case you have any special needs to follow
+  the course.
+
+###Some past runs of this course
 
 - [Fall 2015](http://users.metu.edu.tr/umozge/cr/cogs501Fall2015/)
 - [Fall 2016](http://users.metu.edu.tr/umozge/cr/cogs501Fall2016/)
