@@ -1,0 +1,418 @@
+\documentclass[11pt]{article}
+
+\usepackage[nohide,twocolumn]{ulecnot}
+\usepackage{natbib}
+
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+\usepackage{hyperref}
+
+
+\pagestyle{fancy}
+\lhead{COGS 501 -- Formal Languages and Linguistics}
+\chead{Formal Language Basics and Regular Languages}
+	\rhead{Updated \it \today }
+\lfoot{Umut \"Ozge}
+\cfoot{}
+\rfoot{Page \thepage/\pageref{LastPage}}
+\setlength{\headheight}{13.6pt}
+
+\newcommand{\emptystring}{\ensuremath{\epsilon}}
+
+
+\begin{document}
+
+\section{Alphabets,  strings, languages}
+
+\ezimeti{
+
+\item An \uterm{alphabet} is a finite set of \uterm{symbols}.
+
+\item[] E.g.\ the Roman alphabet $\{a,\ldots,z\}$, $\{a,b\}$, $\crbr{0,1}$,\ldots
+
+\item A \uterm{string} over an alphabet is a finite sequence of symbols from that alphabet.
+
+\item The \uterm{empty string} consists of zero symbols. We will denote it by the symbol
+`\emptystring'.
+% %\footnote{Sudkamp uses `$\lambda$'  for the empty string, you may 
+% also encounter `$e$' or other symbols in other books. As `$\lambda$' has another
+% ubiquitous use in computer science and linguistics, I will use `\emptystring'.}
+
+\item[] Examples of strings on alphabet $\{a,b\}$ are \emptystring, $a$,
+$abbaba$, \ldots
+\item[] The symbols $u,v,w,x,y,z$ are used to name strings -- therefore we avoid
+them as symbols of alphabets.
+
+\item The set of all strings -- including \emptystring -- over an alphabet $\Sigma$ is denoted by \sigmastar.
+
+\item The \uterm{length} of a string $w$ is denoted by $|w|$.
+
+\item The \uterm{concatenation} of two strings $w$ and $v$ is formed by
+sequencing the strings in the given order; it is denoted as $wv$, $w\circ v$,
+or $w^\frown v$. Concatenation is associative: $(xy)z = x(yz)$, and
+$\emptystring w = w \emptystring = w$.
+
+
+\item A string $v$ is a \uterm{substring} of a string $w$, if there exists
+strings $x$ and $y$ such that $w=xvy$. Either or both of $x$ and $y$ can be
+\emptystring. 
+
+\item The \uterm{reverse} of a string $w$, denoted as $w^R$, is defined as
+follows:
+
+\begin{udefinition}[Reverse of a string]
+\ezimeti{
+\item[]
+\item[i.] If $w = \emptystring$, then $w^R = w$.
+\item[ii.] If $w = va$ for some $a \in \Sigma$, then $w^R = av^R$.
+}
+\end{udefinition}
+
+\item The notation $w^n$ stands for concatenating $w$ to itself for $n$ times.
+$w^0 = \emptystring$, $w^1 = w$, $w^2 = ww$, and so on.
+
+\item A \uterm{language} is a set of strings over a certain alphabet.
+
+\item Therefore a language $L$ on an alphabet $\Sigma$ is a subset of
+\sigmastar.
+
+\item Some example languages over $\Sigma = \{a,b\}$:
+
+\[
+\{b,aa,ab\}
+\]
+\[
+\setabs{w\in \sigmastar}{w \text{ has equal number of }a\text{'s and
+}b\text{'s}}\\
+\]
+\[
+\setabs{w\in \sigmastar}{w=w^R}\\
+\]
+
+\hrulefill
+\begin{uexercise}\label{which-is-lang}
+Which of the following are languages?
+\[
+\emptystring\quad\quad\{\emptystring\}\quad\quad\emptyset\quad\quad\Sigma\quad\quad\sigmastar
+\]
+
+
+\end{uexercise}
+\hrulefill
+
+
+
+}
+
+
+
+\section{Some operations on languages}
+
+\ezimeti{ 
+
+\item Given that languages are sets, ordinary set operations
+\cttr{union}, \cttr{intersection} and \cttr{difference} are defined
+for languages. 
+
+\item There also are operations specific to languages. One is
+\cttr{concatenation of languages}. Given any languages $L_1$ and $L_2$
+over $\Sigma$, their concatenation, designated as 
+$L_1\circ L_2$, $L_1^\frown L_2$, or simply $L_1L_2$, is defined as
+follows:
+\begin{align}
+L_1L_2=\{
+w \in \Sigma^*\ |\ 
+w = xy\text{, for some } x\in L_1 \text{ and } y\in L_2
+\}
+\end{align}
+
+\item Our final and third operation is \textbf{closure} (or
+\textbf{star}, or \textbf{Kleene closure}) of a language $L$, denoted
+as $L^*$, which is the set of expressions formed by concatenating zero or more
+strings from $L$.  Formally, 
+\[
+L^*=\setabs{w\in \sigmastar}{w=w_1w_2\ldots w_k \text{ for some }k\geq 0 \text{ where }w_1,w_2,\ldots w_k \in L}
+\]
+or,
+\begin{align*}
+&L^* = \bigcup_{i = 0}^\infty L^i \\ & \text{where }
+L^0=\crbr{\epsilon},\ L^1=L,\ \text{ and, } L^i=LL\cdots L\text{,
+with } i\text{-many } L\text{s} &
+\end{align*}
+
+
+\item We write $L^+$ in place of $LL^*$, which is:
+\[
+L^*=\setabs{w\in \sigmastar}{w=w_1w_2\ldots w_k \text{ for some }k\geq 1 \text{ where }w_1,w_2,\ldots w_k \in L}
+\]
+
+
+\hrulefill
+\begin{uexercise}\label{extf1}
+State whether true or false:
+\begin{enumerate}
+\item\label{extf1a} $\{\epsilon\}^* = \{\epsilon\}$
+\item\label{extf1b} $\emptyset^*=\{\epsilon\}$
+\item\label{extf1c} For any alphabet $\Sigma$, any $L$ defined over $\Sigma$ is such that
+$L\in \mathcal{P}(\Sigma^*)$. ($\mathcal{P}(X)$ denotes the power set of $X$.)
+\item\label{extf1cc}  For any language $L$, $L^* = (L^*)^*$.
+\item\label{extf1d} For any language $L$, $\emptyset L = L\emptyset = L$
+\item\label{extf1e} For any language $L$, $\{\epsilon\}L = \emptyset$
+\end{enumerate}
+
+\hyperlink{extf1sol}{\qed}
+\end{uexercise}
+
+\begin{uexercise}\label{write-ext} Give $L^*$ for (i) $L=\{0,1\}$;  (ii) $L$ is the set of
+	strings of 0's, and (iii) $L=\emptyset$. 
+\end{uexercise}
+
+\begin{uexercise}\label{exconcuni}
+Let $L_1 = \setabs{w \in \{ a,b\}^*}{|w| = 2}$ and $L_2\setabs{w \in \{ a,b\}^*}{|w| = 3 \text{ and } w \text{ ends with } b}$
+
+\begin{enumerate}
+\item\label{exconcunia} Give the concatenation of $L_1$ and $L_2$.
+\item\label{exconcunib} Give their union.
+\end{enumerate}
+
+\hyperlink{exconcunisol}{\qed}
+\end{uexercise}
+
+
+
+\begin{uexercise}\label{lang-desc}
+Let $L_1=\setabs{w \in \crbr{\text{0,1}}^*}{w \text{ has an even number of
+0's}}$ and  \\
+$L_2= \setabs{w \in \crbr{\text{0,1}}^*}{w \text{ starts
+with a 0 followed by any number of 1's}}$. \\ Which language is $L_1L_2$?
+\end{uexercise}
+\hrulefill
+
+}
+
+\section{Finite representation of languages}
+
+\ezimeti{
+\item In the theory of computation and its applications we are interested in
+representing languages of our interest with \emph{finite} means. This is easy
+when the language is finite, but it is a challenge for nonfinite
+languages.
+
+\item One method is constructing an \uterm{inductive} definition:
+
+
+\begin{uexample}[Inductive definition of a language]
+The language $L$ over $\{a,b\}$, where each string begins with an $a$ and has
+an even length.
+\ezimeti{
+\item[i.] $aa$ and $ab \in L$.
+\item[ii.] If $w \in L$, then $waa$, $wab$, $wba$, $wbb \in L$.
+\item[iii.] Nothing other than the strings obtained via i.\ and ii.\ above are
+in $L$.
+}
+\end{uexample}
+
+\begin{uexercise}\label{induct}
+Write an inductive definition for the language $L$ over $\crbr{a,b}$ in which
+every occurrence of $b$ is immediately preceded by an $a$.
+\end{uexercise}
+
+
+\item Now let us see a more transparent and direct way of specifying
+the above languages. This method involves applying the operations set union, concatenation and
+closure on sets. 
+
+\begin{uexample}
+The language $L$ over $\{a,b\}$ which has $bb$ as a substring can be defined as
+$\{a,b\}^*\{bb\}\{a,b\}^*$.
+\end{uexample}
+
+\begin{uexercise}\label{set-notation}
+\begin{enumerate}
+\item[]
+\item\label{set-not1} Define the language $L$ over $\{a,b\}$ whose strings either start with $aa$ or end with $bb$.
+\item Define the language $L$ over $\{a,b\}$ whose strings have an even
+length. Also define for odd length.
+\item Define the language $L$ over $\{0,1\}$ whose strings have two or three
+occurrences of 1 the second and third of which are not consecutive.
+\end{enumerate}
+\end{uexercise}
+
+
+}
+
+\section{Regular languages}
+
+\ezimeti{
+
+\item Another central point of interest in the theory of computation is classes
+of languages -- the set of all languages that share a certain mathematically specifiable
+property.
+
+
+\item The first class we will look at is the class (or set) of \uterm{regular languages}
+(or \uterm{regular sets}).
+
+
+
+\begin{udefinition}[Regular Languages]\label{def-reglang}
+Given an alphabet $\Sigma$:
+
+\etaremune{
+\item $\emptyset$ is a regular language.
+\item For any symbol $a \in \Sigma$, $\crbr{a}$ is a regular language.
+\item If $A$ and $B$ are regular languages, so is $A\cup B$.
+\item If $A$ and $B$ are regular languages, so is $AB$. 
+\item If $A$ is a regular language, so is $A^*$.
+\item Nothing is a regular language unless it fits the above
+definition.
+}
+\end{udefinition}
+
+\item In other words, a language is regular if it can be constructed
+from unit languages like $\{a\}$, $\{b\}$ etc.\  and the empty
+language $\emptyset$ by the repeated application of
+union, concatenation and closure.
+
+\begin{uexercise}\label{show-reg}
+Show that the following languages are regular. 
+\etaremune{
+\item
+$L=\setabs{x \in \crbr{a,b}^*}{x \text{ contains an odd number of $b$'s}}$  
+\item
+$L=\setabs{x \in \crbr{a,b}^*}{x \text{ contains exactly two or three 
+$b$'s}}$
+}
+\end{uexercise}
+
+\item \textbf{Regular expressions} are notational devices to represent
+regular languages.
+
+\begin{udefinition}[Regular Expressions]  For each regular expression
+$E$,  the language denoted by it is designated as $L(E)$. The set of
+regular expressions can be inductively defined as follows.
+
+\etaremune{
+\item The constants $\mathbf{\epsilon}$ and $\mathbf{\emptyset}$ are regular
+expressions, where $L(\mathbf{\epsilon})=\{\epsilon\}$ and
+$L(\mathbf{\emptyset})=\emptyset$.
+\item If $a$ is a symbol, $\mathbf{a}$ is a regular expression, where
+$L(\mathbf{a})=\{a\}$.
+\item If $E$ and $F$ are regular expressions, so is $E\cup F$, where
+$L(E\cup F)=L(E)\cup L(F)$.
+\item If $E$ and $F$ are regular expressions, so is $EF$, where
+$L(EF)=L(E)L(F)$.
+\item If $E$ is a regular expression, so is $E^*$, where
+$L(E^*)=L(E)^*$
+\item If $E$ is a regular expression, so is $(E)$, where $L((E))=L(E)$
+\item If $E$ is a regular expression, then it can be shown to be so by 1--6.
+}
+\end{udefinition}
+
+\begin{uexample}
+Let us write a regular expression for the set of strings that consist of
+alternating 0's and 1's.
+\end{uexample}
+
+\begin{uexercise}\label{write-re} Write regular expressions for the following languages:
+\etaremune{ 
+\item The set of strings over alphabet $\{a,b,c\}$ containing at least one $a$ and at least one $b$.
+\item The set of strings of 0's and 1's whose third symbol from the right end is 1.
+\item The set of strings of 0's and 1's with at most one pair of consecutive 1's.
+\item The set of strings of 0's and 1's with no substring 111. 
+}
+\end{uexercise}
+}
+
+\appendix
+\section{Answers for selected exercises}
+\begin{itemize}
+
+\item[\ref{which-is-lang}] 
+
+$\emptystring$ is a string, not a language; $\{\emptystring\}$,
+$\emptyset$, $\Sigma$, $\sigmastar$ are all
+sets of strings, therefore are all languages. 
+
+\item[\ref{extf1}]\hypertarget{extf1sol}{} \ref{extf1a}: T, \ref{extf1b}: T, \ref{extf1c}: T, \ref{extf1cc}: T,\ref{extf1d}: F, \ref{extf1e}: F
+
+\item[\ref{exconcuni}]\hypertarget{exconcunisol}{}
+
+\ref{exconcunia}.
+\begin{align*}
+L_1L_2= \crbr{&aaaab,aaabb,aabab,aabbb,abaab,ababb,abbab,abbbb,\\
+& baaab,baabb,babab,babbb,bbaab,bbabb,bbbab,bbbbb}
+\end{align*}
+
+
+\item[\ref{write-ext}] (i) $L^*= \crbr{0,1}^*$; (ii) $L^*=\crbr{0}^*$; (iii)
+$L^*=\crbr{\epsilon}$.
+
+\item[\ref{lang-desc}] Strings with odd number of 0's. 
+
+\item[\ref{induct}]
+
+\ezimeti{
+\item[i.] $\epsilon \in L$.
+\item[ii.] If $w \in L$, then $wab$ and $wa \in L$.
+\item[iii.] Nothing other than the strings obtained via i.\ and ii.\ above are
+in $L$.
+}
+
+\item[\ref{set-notation}]
+\begin{enumerate}
+\item  $(\{aa\}\{a,b\}^*)\cup(\{a,b\}^*\{bb\})$;
+
+
+\item even length:
+$\{ab,bb,ba,ab\}^*$ or $(\{a,b\}\{a,b\})^*$;
+
+odd length:
+$\{ab,bb,ba,ab\}^*\{a,b\}$ or $(\{a,b\}\{a,b\})^*\{a,b\}$;
+
+
+\item $\crbr{0}^*\crbr{1}\crbr{0}^*\crbr{1}\crbr{0}^*\crbr{01,\epsilon}\crbr{0}^*$.
+
+\end{enumerate}
+\item[\ref{show-reg}] We need to show that the given languages can be defined
+according to Definition~\ref{def-reglang}. There are two tricky points. One,
+you can only use unit languages in your solution, you are not allowed to
+use sets like $\crbr{a,b}$, you need to obtain them by union. Two,  you are not
+given the empty string $\epsilon$ in the definition, so you cannot use the unit
+language $\crbr{\epsilon}$  in your solution. However, you can obtain it from
+the empty set, since $\emptyset^*=\crbr{\epsilon}$.
+
+\begin{enumerate}
+\item $\crbr{a}^*\crbr{b}\crbr{a}^*(\crbr{a}^*\crbr{b}\crbr{a}^*\crbr{b}\crbr{a}^*)^*$ 
+
+\item $\crbr{a}^*\crbr{b}\crbr{a}^*\crbr{b}\crbr{a}^*(\crbr{b}\cup\emptyset^*)\crbr{a}^*$ 
+
+\end{enumerate}
+
+
+\item[\ref{write-re}]
+\begin{enumerate}
+\item $((a\cup b \cup c)^*a(a\cup b \cup c)^*b(a\cup b \cup c)^*) \cup ((a\cup b \cup c)^*b(a\cup b \cup c)^*a(a\cup b \cup c)^*)$
+
+or $(a\cup b \cup c)^*((a(a\cup b \cup c)^*b) \cup (b(a\cup b \cup c)^*a))(a\cup b \cup c)^*$
+
+\item $(0\cup 1)^*1(0\cup 1)(0\cup 1)$
+
+\item $(0\cup 10)^*(11\cup 1\cup \epsilon)(0\cup 01)^*$
+
+\item $(0\cup 10 \cup 110)^*(11\cup 1\cup \epsilon)(0\cup 01\cup 011)^*$
+
+\end{enumerate}
+\end{itemize}
+% \section*{Self study}
+% 
+% \cite{sudkamp97}, Chapter 2 covers most of the material here. Beware that the
+% book uses `$\lambda$' where we use `$\epsilon$'.
+
+% \bibliographystyle{natgig}
+% \bibliography{ozge.bib}
+\end{document}
+

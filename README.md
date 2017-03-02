@@ -20,7 +20,7 @@ of the course.
 ###Outline
 
 - [General introduction](https://github.com/umutozge/cogs501/blob/master/notes/00_cogs501-general-introduction.pdf)
-- Basics of formal languages
+- [Basics of formal languages + regular languages](https://github.com/umutozge/cogs501/blob/master/notes/01_cogs501-regular-languages.pdf)
 - Natural language morphology
 - Regular languages and finite automata
 - Morphology and computation
