@@ -24,6 +24,7 @@
 
 
 \begin{document}
+\tableofcontents
 
 \section{Alphabets,  strings, languages}
 
@@ -281,6 +282,15 @@ from unit languages like $\{a\}$, $\{b\}$ etc.\  and the empty
 language $\emptyset$ by the repeated application of
 union, concatenation and closure.
 
+\item Precedence conventions: Kleene star binds most tightly, then comes
+concatenation, and finally union. For instance, $\crbr{a}\crbr{b}^*$ gives
+$\crbr{a,ab,abb,abbb,\ldots}$; if you want
+$\crbr{\epsilon,ab,abab,ababab,\ldots}$, you need to have 
+$(\crbr{a}\crbr{b})^*$, Again, $\crbr{a}\crbr{b}\cup\crbr{c}$ gives the set
+$\crbr{ab,c}$; if you want to have $\crbr{ab,ac}$ you need
+$\crbr{a}(\crbr{b}\cup\crbr{c})$. 
+
+
 \begin{uexercise}\label{show-reg}
 Show that the following languages are regular. 
 \etaremune{
@@ -316,20 +326,21 @@ $L(E^*)=L(E)^*$
 }
 \end{udefinition}
 
-\begin{uexample}
-Let us write a regular expression for the set of strings that consist of
-alternating 0's and 1's.
-\end{uexample}
+
+\item Same precedence conventions as above apply.
 
 \begin{uexercise}\label{write-re} Write regular expressions for the following languages:
 \etaremune{ 
 \item The set of strings over alphabet $\{a,b,c\}$ containing at least one $a$ and at least one $b$.
+\item The set of strings that consist of alternating 0's and 1's (=strings with
+no consequtive 0's or 1's).
 \item The set of strings of 0's and 1's whose third symbol from the right end is 1.
 \item The set of strings of 0's and 1's with at most one pair of consecutive 1's.
 \item The set of strings of 0's and 1's with no substring 111. 
 }
 \end{uexercise}
 }
+
 
 \appendix
 \section{Answers for selected exercises}
@@ -403,20 +414,15 @@ the empty set, since $\emptyset^*=\crbr{\epsilon}$.
 
 or $(a\cup b \cup c)^*((a(a\cup b \cup c)^*b) \cup (b(a\cup b \cup c)^*a))(a\cup b \cup c)^*$
 
+\item $(1\cup\epsilon)(01)^*(0\cup\epsilon)$
+
 \item $(0\cup 1)^*1(0\cup 1)(0\cup 1)$
 
 \item $(0\cup 10)^*(11\cup 1\cup \epsilon)(0\cup 01)^*$
 
-\item $(0\cup 10 \cup 110)^*(11\cup 1\cup \epsilon)(0\cup 01\cup 011)^*$
+\item $(0\cup 10 \cup 110)^*(11\cup 1\cup \epsilon)$
 
 \end{enumerate}
 \end{itemize}
-% \section*{Self study}
-% 
-% \cite{sudkamp97}, Chapter 2 covers most of the material here. Beware that the
-% book uses `$\lambda$' where we use `$\epsilon$'.
-
-% \bibliographystyle{natgig}
-% \bibliography{ozge.bib}
 \end{document}
 
