@@ -17,7 +17,7 @@ of the course.
 
 **Time and place:** Thursdays, 14:40-17:30, II-03 (last class on May 25, 2017).
 
-###Outline
+### Outline
 
 - [General introduction](https://github.com/umutozge/cogs501/blob/master/notes/00_cogs501-general-introduction.pdf)
 - [Basics of formal languages + regular languages](https://github.com/umutozge/cogs501/blob/master/notes/01_cogs501-regular-languages.pdf)
@@ -30,7 +30,7 @@ of the course.
 - Beyond context-freeness
 - Turing machines   
 
-###Material
+### Material
 
 Lecture notes will be available on this site, and hardcopy at class.  
 You may consult other sources as needed, such as: 
@@ -40,7 +40,7 @@ Payne, T. (2006). *Exploring Language Structure: A Student's Guide*.  Cambridge 
 Tallerman, M. (2011). *Understanding Syntax*. Hodder Education, Croydon, UK.  
 
 
-###Evaluation
+### Evaluation
 
 |Category| Date | Weight |
 :---|:---|---:
@@ -53,13 +53,13 @@ Homework  | TBA | 20%
 Final exam | TBA | 40%
 
 
-###Attendance
+### Attendance
 
 Not formally required; but past experience shows attendance is a robust
 predictor of success in this course. Make-up quizzes are possible in case of a
 medical issue.  
 
-###Various
+### Various
 
 - Mobile phones and similar devices must be in silent mode and in bags during
   exams.
@@ -68,7 +68,7 @@ medical issue.
 - Please feel free to contact me in case you have any special needs to follow
   the course.
 
-###Some past runs of this course
+### Some past runs of this course
 
 - [Fall 2015](http://users.metu.edu.tr/umozge/cr/cogs501Fall2015/)
 - [Fall 2016](http://users.metu.edu.tr/umozge/cr/cogs501Fall2016/)
