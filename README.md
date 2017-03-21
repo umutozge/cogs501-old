@@ -47,8 +47,8 @@ Tallerman, M. (2011). *Understanding Syntax*. Hodder Education, Croydon, UK.
 5 Quizes, best 4 counted  | Mar 16 | 40%
 | | Apr 6  |   
 | | Apr 27 |   
- | May 11 |   
- | May 25 |   
+| | May 11 |   
+| | May 25 |   
 Homework  | TBA | 20%
 Final exam | TBA | 40%
 
