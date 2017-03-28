@@ -94,13 +94,13 @@ $w^0 = \emptystring$, $w^1 = w$, $w^2 = ww$, and so on.
 \]
 
 \hrulefill
-\begin{uexercise}\label{which-is-lang}
+\begin{uexercise}\label{whichislang}
 Which of the following are languages?
 \[
 \emptystring\quad\quad\{\emptystring\}\quad\quad\emptyset\quad\quad\Sigma\quad\quad\sigmastar
 \]
 
-
+\hyperlink{whichislangsol}{\qed}
 \end{uexercise}
 \hrulefill
 
@@ -195,7 +195,7 @@ with a 0 followed by any number of 1's}}$. \\ Which language is $L_1L_2$?
 \hrulefill
 
 }
-\newpage
+
 \section{Finite representation of languages}
 
 \ezimeti{
@@ -218,13 +218,14 @@ in $L$.
 }
 \end{uexample}
 
+\hrulefill
 \begin{uexercise}\label{induct}
 Write an inductive definition for the language $L$ over $\crbr{a,b}$ in which
 every occurrence of $b$ is immediately preceded by an $a$.
 
 \hyperlink{induct-sol}{\qed}
 \end{uexercise}
-
+\hrulefill
 
 \item Now let us see a more transparent and direct way of specifying
 the above languages. This method involves applying the operations set union, concatenation and
@@ -235,6 +236,9 @@ The language $L$ over $\{a,b\}$ which has $bb$ as a substring can be defined as
 $\{a,b\}^*\{bb\}\{a,b\}^*$.
 \end{uexample}
 
+
+
+\hrulefill
 \begin{uexercise}\label{set-notation}
 \begin{enumerate}
 \item[]
@@ -244,7 +248,10 @@ length. Also define for odd length.
 \item Define the language $L$ over $\{0,1\}$ whose strings have two or three
 occurrences of 1 the second and third of which are not consecutive.
 \end{enumerate}
+
+\hyperlink{set-notationsol}{\qed}
 \end{uexercise}
+\hrulefill
 
 
 }
@@ -329,26 +336,41 @@ $L(E^*)=L(E)^*$
 
 \item Same precedence conventions as above apply.
 
-\begin{uexercise}\label{write-re} Write regular expressions for the following languages:
-\etaremune{ 
-\item The set of strings over alphabet $\{a,b,c\}$ containing at least one $a$ and at least one $b$.
-\item The set of strings that consist of alternating 0's and 1's (=strings with
+\begin{uexercise}\label{writere} Write regular expressions for the following languages:
+\begin{enumerate}
+\item\label{writerea} The set of strings over alphabet $\{a,b,c\}$ containing at least one $a$ and at least one $b$.
+\item\label{writereb} The set of strings that consist of alternating 0's and 1's (=strings with
 no consecutive 0's or 1's).
-\item The set of strings of 0's and 1's whose third symbol from the right end is 1.
-\item The set of strings of 0's and 1's with at most one pair of consecutive 1's.
-\item The set of strings of 0's and 1's with no substring 111. 
-}
+\item\label{writerec} The set of strings of 0's and 1's whose third symbol from the right end is 1.
+\item\label{writered} The set of strings of 0's and 1's with at most one pair of consecutive 1's.
+\item\label{writeree} The set of strings of 0's and 1's with no substring 111. 
+\item\label{writeref} $\setabs{w\in \{a,b\}^*}{w \text{ has at least three } a\text{'s} }$.
+\item\label{writereg} $\setabs{w\in \{a,b\}^*}{w \text{ has at least three } a\text{'s or
+ at least
+two } b\text{'s}}$.
+\item\label{writereh} $\{w\in \{0,1\}^*\, |\, w \text{ starts with 0 and has
+				odd length, or starts with 1}$ and has even length$\}$.
+
+\item\label{writerei} $\setabs{w\in \{0,1\}^*}{w\text{ starts and ends with the same symbol}}$.
+
+\item\label{writerej} $\setabs{w\in \{a,b\}^*}{w \text{ does not begin with } aaa}$.
+
+\item\label{writerek} $\setabs{w\in \{a,b,c\}^*}{w \text{ has an odd number of occurrences of } ab}$.
+
+\item\label{writerel} $\setabs{w\in \{a,b\}^*}{w \text{ has an even length and odd number of
+}b\text{'s}}$.
+\end{enumerate}
+	
+\hyperlink{writeresol}{\qed}
 \end{uexercise}
+
 }
 
-\newpage
-\ 
-\newpage
-	\appendix
-\section{Answers for selected exercises}
+\appendix
+		\section{Answers for selected exercises}
 \begin{itemize}
 
-\item[\ref{which-is-lang}] 
+\item[\ref{whichislang}]\hypertarget{whichislangsol}{} 
 
 $\emptystring$ is a string, not a language; $\{\emptystring\}$,
 $\emptyset$, $\Sigma$, $\sigmastar$ are all
@@ -359,11 +381,20 @@ sets of strings, therefore are all languages.
 \item[\ref{exconcuni}]\hypertarget{exconcunisol}{}
 
 \ref{exconcunia}.
-\begin{align*}
-L_1L_2= \crbr{&aaaab,aaabb,aabab,aabbb,abaab,ababb,abbab,abbbb,\\
-& baaab,baabb,babab,babbb,bbaab,bbabb,bbbab,bbbbb}
-\end{align*}
+$L_1L_2= \{aaaab,aaabb,aabab,aabbb,abaab,ababb,abbab,abbbb,$ 
 
+$baaab, baabb, babab, babbb, bbaab,bbabb,bbbab,bbbbb\}$
+
+\ref{exconcunib}. $L_1\cup L_2 =\crbr{
+aa,
+ab,
+bb,
+ba,
+aab,
+abb,
+bbb,
+bab}
+$
 
 % \item[\ref{write-ext}] (i) $L^*= \crbr{0,1}^*$; (ii) $L^*=\crbr{0}^*$; (iii)
 % $L^*=\crbr{\epsilon}$.
@@ -379,10 +410,9 @@ L_1L_2= \crbr{&aaaab,aaabb,aabab,aabbb,abaab,ababb,abbab,abbbb,\\
 in $L$.
 }
 
-\item[\ref{set-notation}]
+\item[\ref{set-notation}]\hypertarget{set-notationsol}{}
 \begin{enumerate}
 \item  $(\{aa\}\{a,b\}^*)\cup(\{a,b\}^*\{bb\})$;
-
 
 \item even length:
 $\{ab,bb,ba,ab\}^*$ or $(\{a,b\}\{a,b\})^*$;
@@ -390,10 +420,10 @@ $\{ab,bb,ba,ab\}^*$ or $(\{a,b\}\{a,b\})^*$;
 odd length:
 $\{ab,bb,ba,ab\}^*\{a,b\}$ or $(\{a,b\}\{a,b\})^*\{a,b\}$;
 
-
 \item $\crbr{0}^*\crbr{1}\crbr{0}^*\crbr{1}\crbr{0}^*\crbr{01,\epsilon}\crbr{0}^*$.
 
 \end{enumerate}
+
 \item[\ref{show-reg}] We need to show that the given languages can be defined
 according to Definition~\ref{def-reglang}. There are two tricky points. One,
 you can only use unit languages in your solution, you are not allowed to
@@ -410,21 +440,157 @@ the empty set, since $\emptyset^*=\crbr{\epsilon}$.
 \end{enumerate}
 
 
-\item[\ref{write-re}]
+\item[\ref{writere}] \hypertarget{writeresol}{}
 \begin{enumerate}
-\item $((a\cup b \cup c)^*a(a\cup b \cup c)^*b(a\cup b \cup c)^*) \cup ((a\cup b \cup c)^*b(a\cup b \cup c)^*a(a\cup b \cup c)^*)$
+\item[\ref{writerea}.] $((a\cup b \cup c)^*a(a\cup b \cup c)^*b(a\cup b \cup c)^*) \cup ((a\cup b \cup c)^*b(a\cup b \cup c)^*a(a\cup b \cup c)^*)$
 
 or $(a\cup b \cup c)^*((a(a\cup b \cup c)^*b) \cup (b(a\cup b \cup c)^*a))(a\cup b \cup c)^*$
 
-\item $(1\cup\epsilon)(01)^*(0\cup\epsilon)$
+or $(a\cup b \cup c)^*((ac^*b) \cup (bc^*a))(a\cup b \cup c)^*$
+\item[\ref{writereb}.] $(1\cup\epsilon)(01)^*(0\cup\epsilon)$
 
-\item $(0\cup 1)^*1(0\cup 1)(0\cup 1)$
+\item[\ref{writerec}.] $(0\cup 1)^*1(0\cup 1)(0\cup 1)$
 
-\item $(0\cup 10)^*(11\cup 1\cup \epsilon)(0\cup 01)^*$
+\item[\ref{writered}.] $(0\cup 10)^*(11\cup 1\cup \epsilon)(0\cup 01)^*$
 
-\item $(0\cup 10 \cup 110)^*(11\cup 1\cup \epsilon)$
+or $(1\cup \epsilon)(0\cup 01)^*(10 \cup 0)^*(1\cup\epsilon)$
+
+\item[\ref{writeree}.] $(0\cup 10 \cup 110)^*(11\cup 1\cup \epsilon)$
+
+\item[\ref{writeref}.] $(a\cup b)^*a(a\cup b)^*a(a\cup b)^*a(a\cup b)^*$
+
+\item[\ref{writereg}.] $((a\cup b)^*a(a\cup b)^*a(a\cup b)^*a(a\cup b)^*) \cup((a\cup b)^*b(a\cup b)^*b(a\cup b)^*)$
+
+\item[\ref{writereh}.] $(0(10\cup 01\cup 11\cup 00)^*) \cup ((10\cup 11)(10\cup 01\cup 11\cup 00)^*)$
+or $(0((1\cup 0)(1\cup 0))^*) \cup ((10\cup 11)((1\cup 0)(1\cup 0))^*)$
+
+\item[\ref{writerei}.] $0(1\cup 0)^*0\cup 1(1\cup 0)^*1 \cup 0 \cup 1$
+\item[\ref{writerej}.]
+$\epsilon\cup a \cup aa\cup (\epsilon\cup a\cup aa)b(a\cup b)^*$
+or $(\epsilon\cup a\cup aa)(b(a\cup b)^* \cup \epsilon)$
+
+\item[\ref{writerek}.] $(a^*c\cup b\cup c)^*a^*ab((a^*c\cup b\cup c)^*a^*ab(a^*c\cup b\cup c)^*a^*ab)^*(a^*c\cup b\cup c)^*a^*$
+
+\item[\ref{writerel}.] 
+This question is harder than the others. It's quite normal if you were not
+able to solve it. I included it in the exercises, because it exemplifies the
+kind of abstract thinking one needs to adopt in dealing with the mathematics of
+strings and mathematics in general. In short, the difficulty level of this
+question is above what you will encounter in exams, however studying its
+solution would be very helpful for understanding and solving simpler questions.
+
+First, let us observe that, as our grammatical strings will be of even length,
+they are divisible into 2 symbol chunks -- you can scan each string from left to
+right looking at two symbols at each step:
+
+\begin{align}
+x_1y_1\, x_2y_2\,\ldots\, x_ny_n
+\end{align}
+
+for some $n \geq 1$. The reason we say $n$ needs to be at least 1 is that we
+need to have an odd number of $b$'s in our strings and therefore we cannot have
+the empty string: there needs to be at least one pair of symbols.
+
+Now let us observe that in every grammatical string there \emph{must} be at
+least one pair which is either $ab$ or $ba$. The reason is that, if all were
+$aa$ or $bb$ we would have an even number of $b$'s, therefore scanning the pair
+of symbols from left to right, we are certain that we will encounter an $ab$ or
+$ba$ before the string is over. There may be more than one $ab$ or $ba$, the
+crucial thing is that there must be at least one.
+
+As we are sure that there will be at least one $ab$ or $ba$ somewhere in our
+grammatical strings, any such string will obey the following incomplete regular
+expression:
+
+\begin{align}\label{middle}
+\ldots (ab \cup ba)\ldots
+\end{align}
+
+
+
+Now the question is what should come in places of `$\ldots$'. Think for some
+time before reading on, considering that we want our strings to have an even
+length and odd number of $b$'s.
+
+As we already have a string of even length and odd $b$'s (namely $ab$ or $ba$),
+whatever we put to the right or left of it should not change this property.
+Therefore the incomplete parts should contribute strings of even length and an
+\emph{even} number of $b$'s, \emph{including the empty string}. If both
+substrings on the left and right of $ab$ or $ba$ we already specified in
+(\ref{middle}) have this
+property, then we will end up with a string of even length and odd number of
+$b$'s. Therefore, our task is reduced to writing a regular expression for strings
+with even length and even number of $b$'s. Now try to write this on your own and
+check with the solution given below.
+
+How can we write a regular expression for strings with an even length and even
+number of $b$'s? First observe that, as we don't know the length of those
+strings in advance, there must be a repetition with Kleene star. The second
+observation is that this repetition should contribute an even number of symbols
+including an even number of $b$'s. The strings $aa$ and $bb$ fulfill
+this condition, we can repeat them as many times as we want. So we will have
+something like $(\epsilon \cup aa \cup bb)^*$ somewhere in our expression. Is
+this enough? No, because we may encounter $ab$'s or $ba$'s in our even length
+string with even number of $b$'s. We cannot repeat these, since each repetition
+contributes and odd number of $b$'s -- namely 1 -- thereby running the risk of
+ending up with odd number of $b$'s. Once again, the critical observation is that
+when we encounter an $ab$ or $ba$ in the string, we need to have another $ab$ or
+$ba$ somewhere down the string, so that we keep the number of $b$'s balanced at
+an even number. In oder words when you see an $ab$ or $ba$ you start to owe
+another $b$ to be re-paid by another $ab$  or $ba$. This point of repayment does
+not need to come immediately after you start owing the $b$, because there may
+come $aa$'s and $bb$'s in between. Bringing all these observations together we
+arrive at the following regular expression that defines all the strings over the
+alphabet $\crbr{a,b}$ with an even length and an even number of $b$'s:
+
+\begin{align}
+(aa \cup bb \cup ((ab \cup ba)(aa\cup bb)^* (ab\cup ba)))^*
+\end{align}
+
+
+Bringing all together, we arrive at the desired solution:
+
+\begin{align}
+(aa \cup bb \cup ((ab \cup ba)(aa\cup bb)^* (ab\cup ba)))^*(ab \cup ba)(aa \cup
+bb \cup \\ ((ab \cup ba)(aa\cup bb)^* (ab\cup ba)))^* \nonumber
+\end{align}
+
+
+Now we can look back at our solution once more to grasp the logic behind it. We
+observed that whatever grammatical string we have will consist of three
+portions, the first and last of which can be empty.
+
+\begin{itemize}
+\item[]First portion: a string of even length with even number of $b$'s;
+crucially a string where every $ab$ or $ba$ we encounter is matched by another
+$ab$ or $ba$.
+\item[] Second portion: one $ab$ or $ba$, unmatched.
+\item[] Third portion: same as the first.
+\end{itemize}
+
+
+Therefore the expression $(ab \cup ba)$ we wrote in (\ref{middle}) corresponds
+to the unmatched pair in second portion. Note that some strings may have more
+than one analysis into such portions. For instance $abbabaababbb$ can be
+broken down in two different ways: (1) $abba\, ba\, ababbb$; (2) $abbabaab\,
+ab\, bb$
+
+If you couldn't come up with an answer to the question, please study the
+solution very carefully. Or, if you arrived at the same answer as here, try to
+find a shorter one.
 
 \end{enumerate}
 \end{itemize}
 \end{document}
 
+
+
+% \item $\setabs{w\in \{a,b\}^*}{w \text{ has at least three } a\text{'s and at least
+% two } b\text{'s}}$.
+
+
+
+\begin{solution}
+
+
+\end{solution}
