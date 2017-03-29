@@ -115,6 +115,7 @@ graphs called \uterm{state diagrams}. Let's draw a state diagram for the
 language accepted by the fa in Exercise \ref{extrace}.  
 
 
+\hrulefill
 \begin{uexercise}\label{dfaex}
 Draw the state diagrams of an accepting dfa for each language below:
 \etaremune{
@@ -137,13 +138,77 @@ substrings}}$.
 $\setabs{w\in\{a,b\}^*}{w\text{ has odd number of } a\text{'s and an even
 number of } b\text{'s}}$.
 
-\item[\hyperlink{dfaex6}{6.}]
-$(ab \cup aba)^*$
+\item[\hyperlink{dfaex6}{6.}] $\setabs{w\in \{a,b\}}{w \text{ has an even length and odd number of
+}b\text{'s}}$.
+
+\item[\hyperlink{dfaex7}{7.}] $\setabs{w\in \{a,b\}}{w \text{ has at least three } a\text{'s and at least
+two } b\text{'s}}$.
+
+
+\item[\hyperlink{dfaex8}{8.}]
+$\{w\in \{0,1\}\,|\, w$ starts with 0 and has odd length, or starts with 1 and
+has even length $\}$.
+
+\item[\hyperlink{dfaex9}{9.}]
+$\setabs{w\in \{0,1\}}{w\text{ starts and ends with the same symbol}}$.
+
+\item[\hyperlink{dfaex10}{10.}] 
+$\setabs{w\in \{a,b\}}{w \text{ does not begin with } aaa}$.
+
+\item[\hyperlink{dfaex11}{11.}]
+$\setabs{w\in \{a,b,c\}}{w \text{ has an odd number of occurrences of } ab}$.
 }
 
+\qed
 \end{uexercise}
 
+\begin{uexercise}
+Write equivalent dfa's for the following regular expressions (reminder: $w^+=ww^*$):
+\begin{enumerate}
+\item
+$(ab \cup aba)^*$
+\item
+$a(abb)^∗ \cup b$
+\item
+$a^+ \cup (ab)^+$
+\item
+$(a \cup b^+)a^+b^+$
+\item
+$(ab)^*ba$
+\item
+$(ab)^*(ba)^*$
+\item
+$aa(a \cup b)^+bb$
+\item
+$((aa)^+bb)^*$
+\item
+$(ab^*a)^*$
+\end{enumerate}
+
+\qed
+\end{uexercise}
+
+\begin{uexercise}
+Construct a deterministic finite automaton and write a regular expression for each of the following languages
+($\Sigma=\{a,b\}$).
+\begin{enumerate}
+\item The set of strings that either begin or end (or both) with $ab$.
+\item The set of strings where the number of $a$'s $\geq$ 1 (modulo 3).\footnote{See
+the entry ``modulo operation'' in Wikipedia, in case you are not familiar with
+modular arithmetic.}
+\item The set of strings where every odd position is an $a$.
+\item The set of strings with at least two $a$'s and at most one $b$.
+\item The set of strings not in $a^*b^*$.
+\end{enumerate}
+
+\qed
+\end{uexercise}
+\hrulefill
+
+
+
 }
+
 \section{Non-deterministic finite automata}
 
 \ezimeti{
@@ -286,7 +351,6 @@ Prove that $\setabs{w \in \{a,b\}^*}{w=a^nb^n \text{ for } n \geq 0}$ is not a F
 % so far. At certain points there are references to context-free grammars; ignore
 % them for now. You may have difficulty in understanding some formal definitions
 % in the book, concentrate on the examples.
-\end{document}
 \appendix
 \section{Answers for selected exercises}
 \begin{itemize}
@@ -465,10 +529,4 @@ that the state transition function stays the same.}
 \end{enumerate}
 \end{itemize}
 
-\bibliographystyle{natgig}
-\bibliography{ozge}
 \end{document}
-
-\section{Conclusion}
-
-
