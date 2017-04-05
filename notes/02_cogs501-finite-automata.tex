@@ -162,43 +162,57 @@ $\setabs{w\in \{a,b,c\}}{w \text{ has an odd number of occurrences of } ab}$.
 \qed
 \end{uexercise}
 
-\begin{uexercise}
+\begin{uexercise}\label{reg2dfaex}
 Write equivalent dfa's for the following regular expressions (reminder: $w^+=ww^*$):
 \begin{enumerate}
-\item
-$(ab \cup aba)^*$
-\item
+\item[\hyperlink{re2dfas}{1.}]
+\hypertarget{re2dfa}{} $(ab \cup aba)^*$
+
+\item[\hyperlink{re2dfbs}{2.}]
+\hypertarget{re2dfb}{} 
 $a(abb)^∗ \cup b$
-\item
+\item[\hyperlink{re2dfcs}{3.}]
+\hypertarget{re2dfc}{} 
 $a^+ \cup (ab)^+$
-\item
+\item[\hyperlink{re2dfds}{4.}]
+\hypertarget{re2dfd}{} 
 $(a \cup b^+)a^+b^+$
-\item
+\item[\hyperlink{re2dfes}{5.}]
+\hypertarget{re2dfe}{} 
 $(ab)^*ba$
-\item
+\item[\hyperlink{re2dffs}{6.}]
+\hypertarget{re2dff}{} 
 $(ab)^*(ba)^*$
-\item
+\item[\hyperlink{re2dfgs}{7.}]
+\hypertarget{re2dfg}{} 
 $aa(a \cup b)^+bb$
-\item
+\item[\hyperlink{re2dfhs}{8.}]
+\hypertarget{re2dfh}{} 
 $((aa)^+bb)^*$
-\item
+\item[\hyperlink{re2dfis}{9.}]
+\hypertarget{re2dfi}{} 
 $(ab^*a)^*$
 \end{enumerate}
 
 \qed
 \end{uexercise}
 
-\begin{uexercise}
+\begin{uexercise}\label{exboth}
 Construct a deterministic finite automaton and write a regular expression for each of the following languages
 ($\Sigma=\{a,b\}$).
 \begin{enumerate}
-\item The set of strings that either begin or end (or both) with $ab$.
-\item The set of strings where the number of $a$'s $\geq$ 1 (modulo 3).\footnote{See
+\item[\hyperlink{exbothas}{1.}]
+\hypertarget{exbotha}{} The set of strings that either begin or end (or both) with $ab$.
+\item[\hyperlink{exbothbs}{2.}]
+\hypertarget{exbothb}{} The set of strings where the number of $a$'s $\geq$ 1 (modulo 3).\footnote{See
 the entry ``modulo operation'' in Wikipedia, in case you are not familiar with
 modular arithmetic.}
-\item The set of strings where every odd position is an $a$.
-\item The set of strings with at least two $a$'s and at most one $b$.
-\item The set of strings not in $a^*b^*$.
+\item[\hyperlink{exbothcs}{3.}]
+\hypertarget{exbothc}{} The set of strings where every odd position is an $a$.
+\item[\hyperlink{exbothds}{4.}]
+\hypertarget{exbothd}{} The set of strings with at least two $a$'s and at most one $b$.
+\item[\hyperlink{exbothes}{5.}]
+\hypertarget{exbothe}{} The set of strings not in $a^*b^*$.
 \end{enumerate}
 
 \qed
@@ -355,6 +369,7 @@ Prove that $\setabs{w \in \{a,b\}^*}{w=a^nb^n \text{ for } n \geq 0}$ is not a F
 \section{Answers for selected exercises}
 \begin{itemize}
 \item[\ref{dfaex}] 
+
 \begin{enumerate}
 \hypertarget{dfaex1}{\item}
 
@@ -499,34 +514,691 @@ that the state transition function stays the same.}
 }
 }
 
+\hypertarget{dfaex6}{\item}
 
-% \hypertarget{dfaex6}{\item}
-% 
-% \fbox{\parbox[c]{0.41\textwidth}{\footnotesize
-% \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
-%                     semithick]
-%   \tikzstyle{every state}=[fill=none,draw=black,text=black]
-% 
-% 	  \node[initial,state,accepting]  	(0)                    	{$q_0$};
-%   \node[state]          			(1) [right of=0]	  	{$q_1$};
-% 	  \node[state,accepting]			(2) [right of=1]	   	{$q_2$};
-% 	  \node[state,accepting]			(3) [below of=1]   		{$q_3$};
-%   \node[state]						(4) [below of=0]   		{$q_4$};
-% 
-%   \path (0) edge			  	node {$a$} 						(1);
-%   \path (0) edge			  	node {$b$} 						(4);
-%   \path (1) edge			  	node {$b$} 						(2);
-%   \path (1) edge			  	node {$a$} 						(4);
-%   \path (2) edge	[bend left]	node {$a$} 						(3);
-%   \path (2) edge	[bend left=70pt]	node {$b$} 						(4);
-%   \path (3) edge	[bend left]	node {$b$} 						(2);
-%   \path (3) edge				node {$a$} 						(1);
-%   \path (4) edge	[loop left]node {$a,b$} 					(4);
-% 
-% \end{tikzpicture}
-% }
-% }
+\fbox{
+\parbox[c]{0.41\textwidth}{
+Let us designate state names according to the following convention: The set of
+names is the language over the alphabet $\crbr{0,1}$ defined by the regular
+expression $(0\cup 1)(0\cup 1)$. In other words, our state names are picked from
+the set $\crbr{00,10,01,11}$. 0 means even and 1 means odd, where the first
+digit applies to the length of the string to be read by the dfa, the second
+digit applies to the number of $b$'s. With this convention, 01 is the
+state for an even length input with an odd number of $b$'s; 00 is for even
+length with even number of $b$'s, and so on. Here is the machine operating over
+these four states, recognizing the strings of $a$'s and $b$'s with an even
+length and odd number of $b$'s. \textbf{Please observe that the names we give to
+our states
+is just to make the machine more understandable for humans. The names do not
+mean anything to the machine. Any other naming would be equally good, provided
+that the state transition function stays the same.}
+
+
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]  (0)                       {$00$};
+  \node[state] 			(1) [right of=0]	      {$11$};
+  \node[state,accepting](2) [below of=1]	      {$01$};
+  \node[state]          (3) [below of=0]          {$10$};
+
+  \path (0) edge	[bend left]	node {$b$}					(1)
+  	    (1) edge	[bend left]	node {$b$}					(0)
+  	    (1) edge 	[bend left]	node {$a$}				 	(2)
+  	    (2) edge 	[bend left]	node {$a$}				 	(1)
+  	    (2) edge 	[bend left]	node {$b$}				 	(3)
+  	    (3) edge 	[bend left]	node {$b$}				 	(2)
+  	    (0) edge 	[bend left]	node {$a$}				 	(3)
+  	    (3) edge 	[bend left]	node {$a$}				 	(0);
+
+\end{tikzpicture}
+}}}
+
+\hypertarget{dfaex7}{\item}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+
+Let us designate our states with two numbers $xy$. We will use $x$ to designate
+the number of $a$'s encountered. For $0 <x <3$, it will stand directly for the
+number of $a$'s, for $x=3$ it will mean ``we encountered at least 3 $a$'s.'' A
+similar convention will apply to $y$  and the number of $b$'s encountered. The
+only difference is that $y=2$ will mean ``we encountered at least 2 $b$'s'', and
+the values 0 and 1 for $y$ will directly represent the number of $b$'s
+encountered so far. With this naming convention we have 0, 1, 2, and 3 as
+possible values for $x$; 0, 1, and 2 for $y$. This means we can have 12 states
+to designate all the possibilities. We will construct our machine on these
+possibilities.
+
+\textbf{Please observe that the names we give to our states
+is just to make the machine more understandable for humans. The names do not
+mean anything to the machine. Any other naming would be equally good, provided
+that the state transition function stays the same.}
+
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$00$};
+  \node[state] (1) [right of=0] {$10$};
+  \node[state] (2) [right of=1] {$20$};
+  \node[state] (3) [right of=2] {$30$};
+  \node[state] (4) [below of=0] {$01$};
+  \node[state] (5) [below of=1] {$11$};
+  \node[state] (6) [below of=2] {$21$};
+  \node[state] (7) [below of=3] {$31$};
+  \node[state] (8) [below of=4] {$02$};
+  \node[state] (9) [below of=5] {$12$};
+  \node[state] (10) [below of=6]{$22$};
+  \node[state,accepting] (11) [below of=7]{$32$};
+
+  \path (0) edge node {$a$} (1);
+  \path (1) edge node {$a$} (2);
+  \path (2) edge node {$a$} (3);
+  \path (3) edge [loop right] node {$a$} (3);
+
+	  \path (4) edge node {$a$} (5);
+  \path (5) edge node {$a$} (6);
+  \path (6) edge node {$a$} (7);
+  \path (7) edge [loop right] node {$a$} (7);
+
+  \path (8) edge node {$a$} (9);
+  \path (9) edge node {$a$} (10);
+  \path (10) edge node {$a$} (11);
+  \path (11) edge [loop right] node {$a,b$} (11);
+
+  \path (0) edge node {$b$} (4);
+  \path (4) edge node {$b$} (8);
+  \path (8) edge [loop below] node {$b$} (8);
+
+  \path (1) edge node {$b$} (5);
+  \path (5) edge node {$b$} (9);
+  \path (9) edge [loop below]node {$b$} (9);
+  
+  \path (2) edge node {$b$} (6);
+  \path (6) edge node {$b$} (10);
+  \path (10) edge [loop below]node {$b$} (10);
+
+  \path (3) edge node {$b$} (7);
+  \path (7) edge node {$b$} (11);
+
+  \path (11) edge [loop right] node {$a,b$} (11);
+
+\end{tikzpicture}
+}}}
+
+\hypertarget{dfaex8}{\item}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]  (0)                       {$q_0$};
+  \node[state,accepting](1) [right of=0]	  		{$q_1$};
+  \node[state]			(2) [right of=1]	      {$q_2$};
+  \node[state](3) [below of=1]          {$q_3$};
+
+  \path (0) edge					node {$0$}					(1);
+  \path (1) edge	[bend left]				node {$0,1$}					(2);
+  \path (2) edge	[bend left]				node {$0,1$}					(1);
+  \path (0) edge					node {$1$}					(3);
+  \path (3) edge					node {$0,1$}					(1);
+\end{tikzpicture}
+}}}
+
+\hypertarget{dfaex9}{\item}
+
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]  (0)                       {$q_0$};
+  \node[state,accepting](1) [above right of=0]	  {$q_1$};
+  \node[state]			(2) [right of=1]	      {$q_2$};
+  \node[state,accepting](3) [right of=2]          {$q_3$};
+  \node[state,accepting](4) [below right of=0]    {$q_4$};
+  \node[state]          (5) [right of=4]          {$q_5$};
+  \node[state,accepting](6) [right of=5]          {$q_6$};
+
+  \path (0) edge					node {$0$}					(1);
+  \path (0) edge					node {$1$}					(4);
+  \path (1) edge	[loop above]	node {$0$}					(1);
+  \path (1) edge		node {$1$}					(2);
+  \path (2) edge	[loop above]	node {$1$}					(2);
+  \path (2) edge	[bend left] 	node {$0$}					(3);
+  \path (3) edge	[loop right] 	node {$0$}					(3);
+  \path (3) edge	[bend left] 	node {$1$}					(2);
+  \path (4) edge	[loop below]	node {$1$}					(4);
+  \path (4) edge			node {$0$}					(5);
+  \path (5) edge	[loop below]	node {$0$}					(5);
+  \path (5) edge	[bend left] 	node {$1$}					(6);
+  \path (6) edge	[loop right] 	node {$1$}					(6);
+  \path (6) edge	[bend left] 	node {$0$}					(5);
+\end{tikzpicture}
+}}}
+
+\hypertarget{dfaex10}{\item}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state,accepting] (0) {$q_0$};
+  \node[state,accepting] (1) [right of=0] {$q_1$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+  \node[state] (3) [right of=2] {$q_3$};
+  \node[state,accepting] (4) [below of=1] {$q_4$};
+
+  \path (0) edge node {$a$} (1);
+  \path (1) edge node {$a$} (2);
+  \path (2) edge node {$a$} (3);
+  \path (3) edge [loop right] node {$a,b$} (3);
+  \path (0) edge node {$b$} (4);
+  \path (1) edge node {$b$} (4);
+  \path (2) edge node {$b$} (4);
+  \path (4) edge [loop below] node {$a,b$} (4);
+
+\end{tikzpicture}
+}}}
+\hypertarget{dfaex11}{\item}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [right of=0] {$q_1$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+  \node[state,accepting] (3) [above right of=2] {$q_3$};
+  \node[state] (4) [below right of=3] {$q_4$};
+  \node[state] (5) [below left of=4] {$q_5$};
+
+  \path (0) edge [bend left] node {$a$} (1);
+  \path (0) edge [loop above] node {$b,c$} (1);
+  \path (1) edge [bend left] node {$b$} (2);
+  \path (1) edge [bend left] node {$c$} (0);
+  \path (1) edge [loop above] node {$a$} (1);
+  \path (2) edge [bend left] node {$a$} (3);
+  \path (2) edge [loop below] node {$b,c$} (2);
+  \path (3) edge  node {$b$} (4);
+  \path (3) edge [loop above] node {$a$} (3);
+  \path (4) edge [loop right] node {$b,c$} (4);
+  \path (3) edge [bend left] node {$c$} (2);
+  \path (4) edge[bend left] node  {$a$} (5);
+  \path (5) edge [bend left]node  {$c$} (4);
+  \path (5) edge node {$b$} (2);
+  \path (5) edge [loop below] node {$a$} (5);
+
+\end{tikzpicture}
+}}}
 \end{enumerate}
-\end{itemize}
 
+\item[\ref{reg2dfaex}] 
+\begin{enumerate}
+
+\item[\hyperlink{re2dfa}{1.}]
+\hypertarget{re2dfas}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+	  \node[initial,state,accepting]  	(0)                    	{$q_0$};
+  \node[state]          			(1) [right of=0]	  	{$q_1$};
+	  \node[state,accepting]			(2) [right of=1]	   	{$q_2$};
+	  \node[state,accepting]			(3) [below of=1]   		{$q_3$};
+  \node[state]						(4) [below of=0]   		{$q_4$};
+
+  \path (0) edge			  	node {$a$} 						(1);
+  \path (0) edge			  	node {$b$} 						(4);
+  \path (1) edge			  	node {$b$} 						(2);
+  \path (1) edge			  	node {$a$} 						(4);
+  \path (2) edge	[bend left]	node {$a$} 						(3);
+  \path (2) edge	[bend left=70pt]	node {$b$} 						(4);
+  \path (3) edge	[bend left]	node {$b$} 						(2);
+  \path (3) edge				node {$a$} 						(1);
+  \path (4) edge	[loop left]node {$a,b$} 					(4);
+
+\end{tikzpicture}
+
+}
+}
+
+
+\item[\hyperlink{re2dfb}{2.}]
+\hypertarget{re2dfbs}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [above right of=0] {$q_1$};
+  \node[state] (2) [right of=1] {$q_2$};
+  \node[state] (3) [right of=2] {$q_3$};
+  \node[state,accepting] (4) [below right of=3] {$q_4$};
+  \node[state] (5) [below of=2] {$q_5$};
+
+  \path (0) edge node {$a$} (1);
+  \path (0) edge [bend right=50pt] node {$b$} (4);
+	\path (1) edge node {$a$} (2);
+	\path (1) edge node {$b$} (5);
+  \path (2) edge node {$b$} (3);
+  \path (2) edge node {$a$} (5);
+  \path (3) edge node {$b$} (4);
+  \path (3) edge node {$a$} (5);
+  \path (4) edge node {$a,b$} (5);
+  \path (5) edge [loop left] node {$a,b$} (5);
+
+\end{tikzpicture}
+}}}
+\item[\hyperlink{re2dfc}{3.}]
+\hypertarget{re2dfcs}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state,accepting] (1) [above right of=0] {$q_1$};
+  \node[state,accepting] (2) [below of=1] {$q_2$};
+  \node[state,accepting] (3) [right of=2] {$q_3$};
+  \node[state] (4) [below of=2] {$q_4$};
+  \node[state] (5) [right of=3] {$q_5$};
+
+  \path (0) edge node {$a$} (1);
+  \path (1) edge node {$a$} (2);
+  \path (1) edge node {$b$} (3);
+  \path (2) edge [loop right] node {$a$} (2);
+  \path (2) edge node {$b$} (4);
+  \path (0) edge node {$b$} (4);
+  \path (3) edge  node {$b$} (4);
+  \path (3) edge [bend left]node {$a$} (5);
+  \path (5) edge [bend left]node {$b$} (3);
+  \path (5) edge [bend left]node {$a$} (4);
+  \path (4) edge [loop left] node {$a,b$} (4);
+
+\end{tikzpicture}
+}}}
+
+\item[\hyperlink{re2dfd}{4.}]
+\hypertarget{re2dfds}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+
+	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [right of=0] {$q_1$};
+  \node[state] (2) [right of=1] {$q_2$};
+  \node[state,accepting] (3) [right of=2] {$q_3$};
+  \node[state] (4) [below right of=0] {$q_4$};
+  \node[state] (5) [above left of=2] {$q_5$};
+
+  \path (0) edge node {$a$} (1);
+  \path (0) edge node {$b$} (4);
+  \path (1) edge node {$a$} (2);
+  \path (1) edge node {$b$} (5);
+  \path (2) edge [loop above]node {$a$} (2);
+  \path (2) edge node {$b$} (3);
+  \path (3) edge [loop right]node {$b$} (3);
+  \path (3) edge [bend right] node {$a$} (5);
+  \path (4) edge node {$a$} (2);
+  \path (4) edge [loop below]node {$b$} (2);
+  \path (5) edge [loop left] node {$a,b$} (5);
+
+\end{tikzpicture}
+}}}
+\item[\hyperlink{re2dfe}{5.}]
+\hypertarget{re2dfes}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+
+	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3.0cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [right of=0] {$q_1$};
+  \node[state] (2) [right of=1] {$q_2$};
+  \node[state,accepting] (3) [right of=2] {$q_3$};
+  \node[state] (4) [below right of=0] {$q_4$};
+  \node[state] (5) [above left of=2] {$q_5$};
+
+  \path (0) edge node {$a$} (1);
+  \path (0) edge node {$b$} (4);
+  \path (1) edge node {$a$} (2);
+  \path (1) edge node {$b$} (5);
+  \path (2) edge [loop above]node {$a$} (2);
+  \path (2) edge node {$b$} (3);
+  \path (3) edge [loop right]node {$b$} (3);
+  \path (3) edge [bend right] node {$a$} (5);
+  \path (4) edge node {$a$} (2);
+  \path (4) edge [loop below]node {$b$} (2);
+  \path (5) edge [loop left] node {$a,b$} (5);
+
+\end{tikzpicture}
+}}}
+\item[\hyperlink{re2dff}{6.}]
+\hypertarget{re2dffs}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state,accepting] (0) {$q_0$};
+  \node[state] (1) [above of=0] {$q_1$};
+  \node[state] (2) [right of=0] {$q_2$};
+  \node[state,accepting] (3) [right of=2] {$q_3$};
+  \node[state] (4) [above of=2] {$q_4$};
+
+  \path (0) edge [bend right]node {$a$} (1);
+  \path (1) edge [bend right]node {$b$} (0);
+  \path (0) edge node {$b$} (2);
+  \path (2) edge [bend left]node {$a$} (3);
+  \path (3) edge [bend left]node {$b$} (2);
+  \path (1) edge node {$a$} (4);
+  \path (2) edge node {$b$} (4);
+  \path (3) edge node {$a$} (4);
+  \path (4) edge [loop right]node {$a,b$} (4);
+\end{tikzpicture}
+}}}
+\item[\hyperlink{re2dfg}{7.}]
+\hypertarget{re2dfgs}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [right of=0] {$q_1$};
+  \node[state] (2) [right of=1] {$q_2$};
+  \node[state] (3) [right of=2] {$q_3$};
+  \node[state] (4) [below of=3] {$q_4$};
+  \node[state,accepting] (5) [left of=4] {$q_5$};
+  \node[state] (6) [below of=0] {$q_6$};
+
+  \path (0) edge node {$a$} (1);
+  \path (0) edge node {$b$} (6);
+  \path (1) edge node {$a$} (2);
+  \path (1) edge node {$b$} (6);
+  \path (2) edge node {$a,b$} (3);
+  \path (3) edge [loop right]node {$a$} (3);
+  \path (3) edge [bend left]node {$b$} (4);
+  \path (4) edge [bend left]node {$a$} (3);
+  \path (4) edge node {$b$} (5);
+  \path (4) edge [bend left]node {$a$} (3);
+  \path (5) edge [loop left]node {$b$} (5);
+  \path (5) edge node {$a$} (3);
+  \path (6) edge [loop right]node {$a,b$} (6);
+\end{tikzpicture}
+}}}
+
+\item[\hyperlink{re2dfh}{8.}]
+\hypertarget{re2dfhs}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state,accepting] (0) {$q_0$};
+  \node[state] (1) [right of=0] {$q_1$};
+  \node[state] (2) [right of=1] {$q_2$};
+  \node[state] (3) [below of=2] {$q_3$};
+  \node[state,accepting] (4) [left of=3] {$q_4$};
+  \node[state] (5) [below of=0] {$q_5$};
+
+  \path (0) edge node {$a$} (1);
+  \path (0) edge node {$b$} (5);
+  \path (1) edge [bend left]node {$a$} (2);
+  \path (2) edge [bend left]node {$a$} (1);
+  \path (1) edge node {$b$} (5);
+  \path (2) edge node {$b$} (3);
+  \path (3) edge node {$b$} (4);
+  \path (3) edge [bend left=50pt]node {$a$} (5);
+  \path (4) edge node {$a$} (1);
+  \path (4) edge node {$b$} (5);
+  \path (5) edge [loop left]node {$a,b$} (5);
+\end{tikzpicture}
+}}}
+\item[\hyperlink{re2dfi}{9.}]
+\hypertarget{re2dfis}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state,accepting] (0) {$q_0$};
+  \node[state] (1) [right of=0] {$q_1$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+  \node[state] (3) [below of=1] {$q_3$};
+
+  \path (0) edge node {$a$} (1);
+  \path (0) edge node {$b$} (3);
+  \path (1) edge [loop above]node {$b$} (1);
+  \path (1) edge node {$a$} (2);
+  \path (2) edge [bend left]node {$a$} (1);
+  \path (2) edge node {$b$} (3);
+  \path (3) edge [loop below]node {$a,b$} (3);
+\end{tikzpicture}
+}}}
+\end{enumerate}
+
+\item[\ref{exboth}] 
+\begin{enumerate}
+\item[\hyperlink{exbotha}{1.}]
+\hypertarget{exbothas}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [above right of=0] {$q_1$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+  \node[state] (3) [below right of=0] {$q_3$};
+  \node[state] (4) [right of=3] {$q_4$};
+  \node[state,accepting] (5) [right of=4] {$q_5$};
+
+  \path (0) edge node {$a$} (1);
+  \path (0) edge node {$b$} (3);
+  \path (1) edge node {$b$} (2);
+  \path (1) edge node {$a$} (4);
+  \path (2) edge [loop right]node {$a,b$} (2);
+  \path (3) edge [loop above]node {$b$} (3);
+  \path (3) edge node {$a$} (4);
+  \path (4) edge [loop above]node {$a$} (4);
+  \path (4) edge [bend left]node {$b$} (5);
+  \path (5) edge [bend left=50pt]node {$b$} (3);
+  \path (5) edge [bend left]node {$a$} (4);
+
+\end{tikzpicture}
+}}}
+\item[\hyperlink{exbothb}{2.}]
+\hypertarget{exbothbs}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state,accepting] (0) {$q_0$};
+  \node[state,accepting] (1) [right of=0] {$q_1$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+  \node[state] (3) [ right of=2] {$q_3$};
+
+  \path (0) edge [loop above]node {$b$} (0);
+  \path (0) edge node {$a$} (1);
+  \path (1) edge [loop above]node {$b$} (1);
+  \path (1) edge node {$a$} (2);
+  \path (2) edge [loop above]node {$b$} (2);
+  \path (2) edge node {$a$} (3);
+  \path (3) edge [bend left]node {$a$} (1);
+  \path (3) edge [loop above]node {$b$} (3);
+
+\end{tikzpicture}
+}}}
+\item[\hyperlink{exbothc}{3.}]
+\hypertarget{exbothcs}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state,accepting] (0) {$q_0$};
+  \node[state,accepting] (1) [right of=0] {$q_1$};
+  \node[state] (2) [below of=0] {$q_2$};
+
+  \path (0) edge [bend left]node {$a$} (1);
+  \path (1) edge [bend left]node {$a,b$} (0);
+  \path (0) edge node {$b$} (2);
+  \path (2) edge [loop right]node {$a,b$} (2);
+
+\end{tikzpicture}
+}}}
+\item[\hyperlink{exbothd}{4.}]
+\hypertarget{exbothds}{}
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [above right of=0] {$q_1$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+  \node[state,accepting] (3) [right of=2] {$q_3$};
+  \node[state] (4) [right of=0] {$q_4$};
+  \node[state,accepting] (5) [below right of=4] {$q_5$};
+  \node[state] (6) [below of=0] {$q_6$};
+  \node[state] (7) [right of=6] {$q_7$};
+  \node[state] (8) [right of=5] {$q_8$};
+
+  \path (0) edge node {$a$} (1);
+  \path (1) edge node {$a$} (2);
+  \path (2) edge [loop above]node {$a$} (2);
+  \path (2) edge node {$b$} (3);
+  \path (3) edge [loop above]node {$a$} (3);
+  \path (1) edge node {$b$} (4);
+  \path (4) edge node {$a$} (5);
+  \path (5) edge [loop right]node {$a$} (5);
+  \path (0) edge []node {$b$} (6);
+  \path (6) edge []node {$a$} (7);
+  \path (7) edge []node {$a$} (5);
+  \path (6) edge [bend right=50pt]node {$b$} (8);
+  \path (7) edge [bend right]node {$b$} (8);
+  \path (5) edge [bend left]node {$b$} (8);
+  \path (4) edge [bend left]node {$b$} (8);
+  \path (3) edge node {$b$} (8);
+  \path (8) edge [loop right]node {$a,b$} (8);
+	
+\end{tikzpicture}
+}}}
+\item[\hyperlink{exbothe}{5.}]
+\hypertarget{exbothes}{}
+
+\fbox{
+\parbox[c]{0.41\textwidth}{
+{
+\footnotesize
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node
+distance=3.0cm,semithick]
+
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0) {$q_0$};
+  \node[state] (1) [right of=0] {$q_1$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+
+  \path (0) edge node {$b$} (1);
+  \path (0) edge [loop above] node {$a$} (0);
+  \path (1) edge [loop above] node {$b$} (1);
+  \path (1) edge node {$a$} (2);
+  \path (2) edge [loop right]node {$a,b$} (2);
+	
+\end{tikzpicture}
+}}}
+\end{enumerate}
+
+\end{itemize}
 \end{document}
