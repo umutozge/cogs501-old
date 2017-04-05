@@ -902,22 +902,18 @@ that the state transition function stays the same.}
 
   \node[initial,state] (0) {$q_0$};
   \node[state] (1) [right of=0] {$q_1$};
-  \node[state] (2) [right of=1] {$q_2$};
-  \node[state,accepting] (3) [right of=2] {$q_3$};
-  \node[state] (4) [below right of=0] {$q_4$};
-  \node[state] (5) [above left of=2] {$q_5$};
+  \node[state,accepting] (2) [right of=1] {$q_2$};
+  \node[state] (3) [below of=0] {$q_3$};
+  \node[state] (4) [below of=1] {$q_4$};
 
-  \path (0) edge node {$a$} (1);
-  \path (0) edge node {$b$} (4);
+  \path (0) edge node {$b$} (1);
+  \path (0) edge [bend left]node {$a$} (3);
+  \path (3) edge [bend left]node {$b$} (0);
   \path (1) edge node {$a$} (2);
-  \path (1) edge node {$b$} (5);
-  \path (2) edge [loop above]node {$a$} (2);
-  \path (2) edge node {$b$} (3);
-  \path (3) edge [loop right]node {$b$} (3);
-  \path (3) edge [bend right] node {$a$} (5);
-  \path (4) edge node {$a$} (2);
-  \path (4) edge [loop below]node {$b$} (2);
-  \path (5) edge [loop left] node {$a,b$} (5);
+  \path (1) edge node {$b$} (4);
+  \path (3) edge node {$a$} (4);
+  \path (4) edge [loop below] node {$a,b$} (4);
+  \path (2) edge  node {$a,b$} (4);
 
 \end{tikzpicture}
 }}}
