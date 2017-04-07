@@ -240,7 +240,7 @@ allowed to advance the state without reading any symbol from the input tape;
 
 
 \begin{uexercise}
-Provide an nfa for the languages 1, 2 and 6 of exercise \ref{dfaex}. 
+Provide an nfa for the languages 1 and 4 of exercise \ref{exboth}. 
 \end{uexercise}
 
 
@@ -259,12 +259,32 @@ the dfa. We will not study the algorithm in detail.
 
 \begin{uexercise}
 Provide nfa's that accept the following languages:
-\begin{itemize}
-\item[(a)] $(ab)^*(ba)^* \cup aa^*$
-\item[(b)] $((ab \cup aab)^*a^*)^*$
-\item[(c)] $((a^*b^*a^*)^*b)^*$
-\item[(d)] $(ba \cup b^*) \cup (bb \cup a)^*$
-\end{itemize}
+\begin{enumerate}
+\item $(ab)^*(ba)^* \cup aa^*$
+\item $((ab \cup aab)^*a^*)^*$
+\item $((a^*b^*a^*)^*b)^*$
+\item $(ba \cup b^*) \cup (bb \cup a)^*$
+\end{enumerate}
+
+\qed
+\end{uexercise}
+
+\begin{uexercise}
+
+Provide nfa's that accept the following languages:
+\begin{enumerate}
+\item The set of strings of 0's and 1's such that there are two 0's
+separated by a number of positions that is a multiple of 4 (0 counts
+as a multiple of 4).
+\item  The set of strings over the alphabet $\crbr{\text{0,1,2}}$ such that
+every 0 is followed by exactly two 1's and every 2 is followed either
+by 10 or 01.
+\item The set of strings over the alphabet $\crbr{a,b,c,d}$ such that no string
+has all the symbols from the alphabet. Strings like $aabddba$, $a$, $bacca$ are
+in, strings like $dcba$, $cbbdbbabb$ are out.
+\end{enumerate}
+
+\qed
 \end{uexercise}
 }
 
@@ -288,17 +308,17 @@ side of the theorem:
 					$\emptyset$, $\epsilon$ and the unit language \textbf{a} for an
 							arbitrary symbol $a$, have equivalent NFAs. 
 			\item Then we show that finite automata are closed under
-			union, concatenation and closure.
+			union, concatenation and Kleene star.
 	}
 }
 
 
 
-\section{Properties of regular languages}
+\section{Closure properties of regular languages}
 
 \ezimeti{
 \item We have seen above that regular languages and FALs are closed
-under the operations of union, concatenation and closure. Now we look at
+under the operations of union, concatenation and Kleene star. Now we look at
 intersection and complementation.
 
 \item If a language $L \subseteq \Sigma^*$ is regular,\footnote{Note
@@ -326,7 +346,7 @@ odd length regular?
 % other natural language -- a regular language?
 % }
 
-\section{A Way to determine that a language is not regular}
+\section{A way to determine that a language is not regular}
 
 \ezimeti{
 \item
