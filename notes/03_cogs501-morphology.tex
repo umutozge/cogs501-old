@@ -1,0 +1,660 @@
+\documentclass[11pt]{article}
+\usepackage{tipa}
+\usepackage[nohide,twocolumn]{ulecnot}
+
+\pagestyle{fancy}
+\lhead{COGS 501 -- Formal Languages and Linguistics}
+\chead{Morphology}
+\rhead{Spring 2017}
+\lfoot{Umut \"Ozge -- \href{mailto:umozge@metu.edu.tr}{\nolinkurl{umozge@metu.edu.tr}}}
+\cfoot{\today}
+\rfoot{Page \thepage/\pageref{LastPage}}
+\setlength{\headheight}{13.6pt}
+
+
+% \usepackage[screen,article]{pdfscreen}
+% \usepackage[display]{texpower}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{linguex}
+	\renewcommand{\refdash}{}
+
+\newcommand{\morphrule}[3]{{\it#1}\hspace{10pt}\sysm{\imp}\hspace{10pt}{\it#2}\hspace{10pt}/\hspace{10pt}{\it#3}}
+
+
+\begin{document}
+
+
+\section{Introduction\protect\footnote{The material up to section \ref{morphop}
+is largely adapted from Payne (2006).}}
+
+\begin{itemize}
+\item Morphology deals with 
+\ezimeti{
+\item word form (sound shapes)
+\item word structure (abstracting from the shape)
+\item word generation (building complex structures)
+}
+\item It aims to define notions ``morpheme'', ``word'', ``inflection''
+\item But why a cognitive scientist should care?
+\item Because human beings seem to have intuitions (read as implicit knowledge)
+about these concepts.
+\item How do we know that they do?
+\item It is revealed in behavior and learning. 
+\end{itemize}
+
+
+\section{Morphemes, morphs, allomorphy}
+
+\ezimeti{
+\item What comes to your mind when you hear ``word structure'', or just
+``structure''?
+\item Let's start with something basic and intuitive: part-whole structure of a
+word.  
+
+\item {\bf Morpheme:} smallest linguistic unit with a grammatical function
+\sysm{\simeq} smallest meaningful part. For the notion of morpheme, we take
+meaning to be equivalent to function. By ``smallest'', we mean a unit that is
+not decomposable further.  
+
+\item Another definition would be ``sound-meaning pairing''. In some cases this
+proves problematic, we will come to them below.
+
+
+
+\begin{uexercise}[Aztec]
+List the morphemes:
+
+\begin{tabular}{llllll}
+a. &ikalwewe &`his big house' &i. &petatc$\cdot$in&`little mat'\\
+b. &ikalsosol &`his old house' &j. &ikalmeh &`his houses'\\
+c. &ikalc$\cdot$in &`his little house' &k. &komitmeh &`cooking-pots'\\
+d. &komitwewe &`big cooking-pot' &l. &petatmeh &`mats'\\
+e. &komitsosol &`old cooking-pot' &m. &ko$\cdot$yamec$\cdot$in &`little pig'\\
+f. &komitc$\cdot$in &`little cooking-pot' &n. &ko$\cdot$yamewewe &`big male pig'\\
+g. &petahwewe & `big mat' &o. &ko$\cdot$yameilama&`big female pig'\\
+h. &petatsosol & `old mat' &p. &ko$\cdot$yamemeh&`pigs'
+\end{tabular}
+\end{uexercise}
+
+
+\item Morpheme classification:
+
+\item[] {\bf Free} morphemes can stand alone, while {\bf bound} morphemes always
+need some other linguistic material to realize a complete(??) expression.
+
+
+\item[] Another typing:
+
+\ezimeti{
+\item Root (bound or free)
+\item Affix (bound)
+\item Clitic (bound)
+}
+
+\item Root is the semantically main part of a word, which cannot be further
+divided into morphemes. Examples?
+
+\item Sometimes linguists talk of \uterm{stems} as well. The stem root
+distinction is subtle and sometimes confusing. 
+
+\item Affixes are added to a root or stem to form new words. 
+
+\item Clitics are bound morphemes that differ from affixes by being related to a
+structure larger than those at word-level. E.g.\ Turkish \emph{de/da} are clitics. 
+
+}
+
+\subsection{Some complications with the notion ``morpheme''}
+
+\ezimeti{
+\item Non-segmental morphemes: the morpheme does not correspond to a designated
+sequence of sounds (segment), but is more abstract.
+
+\item[] English past tense:
+
+\begin{tabular}{ll}
+run & ran \\
+speak & spoke\\
+eat & ate\\
+read & read
+\end{tabular}
+
+
+\item[] Noun to verb morphology:
+
+
+\begin{tabular}{l|l}
+Noun & Verb \\ \hline
+breath & breathe\\
+cloth & clothe\\
+house & house
+\end{tabular}
+
+where the voicless fricative endings ([\textipa{T,s}]) turn to voiced fricatives
+([\textipa{D,z}])
+
+\item Zero morphemes:
+\item[] Turkish:
+
+\begin{tabular}{ll}
+gidiyor-um & gidiyor-$\emptyset$ \\
+going-1sg & going-3sg
+\end{tabular}
+
+\item[] English:
+
+\begin{tabular}{l}
+a fish\\
+ten fish-$\emptyset$
+\end{tabular}
+
+
+
+\item Two lessons:
+\item[] Some morphological operations need to be thought as processes.
+\item[] At an abstract level a morpheme defines a contrast.
+
+
+
+
+
+\begin{uexercise}[German plural] 
+What indicates plurality in German?
+
+\begin{tabular}{llll}
+V\"ater & `fathers' & Auge & `eye'\\
+Kinder & `children' & Adler & `eagle'\\
+Pferd & `horse' & Kind & `child'\\
+M\"anner & `men' & Augen & `eyes'\\
+Vater & `father' & Kuh & `cow'\\
+Mann & `man' & Frauen & `women'\\
+Adler & `eagles' & Auto & `car'\\
+K\"uhe & `cows' & Autos & `cars'\\
+Pferde & `horses' & Frau & `woman'
+\end{tabular}
+\end{uexercise}
+
+
+\item {\bf Morph:} individual \uterm{tokens} of a morpheme.
+
+\item {\bf Allomorphs:} The set of morphs of a morpheme. Two morphs from this
+set stand in an allomorphy relation.
+
+\item Example: English plural allomorphs?
+
+
+
+\item Note that in deciding on morphemehood, function (meaning) prevails over form. Compare \emph{quickly} \versus
+\emph{lovely}.
+
+\begin{uexercise}
+Think of cases from Turkish where we need the abstraction of allomorphy.
+\end{uexercise}
+}
+
+\section{Inflection \versus\ derivation}
+\ezimeti{
+\item Inflections express grammatical or functional categories -- this will make
+more sense when we come to syntax. 
+\item[] therefore they are general. E.g.\ In a given language if a verb has
+tense every verb has tense; if a noun has case, every noun has case.
+\item[] Inflections are relevant for syntax.
+
+\item Derivations form new words.  
+\item[] they are more restricted: \emph{build-ing}, \emph{*see-ing},
+\emph{view-ing}\ldots
+}
+
+\section{Main morphological processes}
+\ezimeti{
+\item[] {\bf Affixation:}
+
+\ezimeti{
+\item Prefix: \emph{anti-dis-establishment}
+
+\item Suffix: \emph{antidisestablish-ment-ari-an-ism}
+
+\item Infix:
+
+\item[] Tagalog \emph{-um-} makes an agent out of a verb:
+
+\begin{tabular}{lll}
+sulat& s-um-ulat & `one who wrote'\\
+gradwet & gr-um-adwet & `one who graduated'
+\end{tabular}
+
+\item Circumfix:
+
+\item[] Indonesian \emph{ke-\ldots-an} makes nouns from adjectives:
+
+\begin{tabular}{llll}
+besar & `big' & ke-besar-an & `bigness, greatness' 
+\end{tabular}
+
+\item[] Chukchee  \emph{a-\ldots-ke} expresses negation:
+
+\begin{tabular}{llll}
+jatjol & `fox' & a-jatjol-ka & `without a fox' \\
+cakett  & `sister' & a-cakett\textipa{@}-ke & `without a sister'
+\end{tabular}
+
+}
+
+
+\item[] {\bf Stem modification:}
+
+Shape change without an affix.
+Ex.: \emph{ring}, \emph{rang}.
+
+
+\item[] {\bf Autosegmental variation:}
+
+What is ``autosegmental''? Processes that refer to structures beyond single
+sounds are autosegmental processes or properties. For instance where the main stress (Tr. \emph{vurgu}) refers to
+syllables (and their organization) rather than individual sounds; there is no
+rule like ``stress the vowels \emph{a} and \emph{e}, but not \emph{i}, \emph{o},
+and so on''.
+
+English stress: 
+
+\emph{conv\'ert} $\rightarrow$ \emph{c\'onvert} 
+
+\emph{perm\'it} $\rightarrow$ \emph{p\'ermit}
+
+
+\item[] {\bf Reduplication:}
+
+\item[] Indonesian plural is made by duplicating the root: \emph{anak} `child',
+\emph{anakanak} `children'.
+
+More interestingly, Ilakona, an Austronesian language, duplicates the first
+syllable only for plural: \emph{ulo} `head', \emph{ululo} `heads'. 
+
+
+	
+
+\item[] {\bf Non-concatenative morphology:}
+
+In Semitic languages like Arabic and Hebrew.
+
+\begin{tabular}{lll}
+ktb & Root & no meaning\\
+k\textipa{@}tob & imperative & `write!'\\
+\textipa{kAtob} & infinitive & `to write'\\
+\textipa{kotEb} & present participle &  `writing'\\
+\textipa{kAtub} & past participle & `written'\\
+\textipa{kAtab} & perfective & `wrote'
+\end{tabular}
+
+\item[] {\bf Subtractive morphology:}
+
+Murle (East Africa) plurals are made by removing the final consonant:
+\emph{nyoon} `lamb', \emph{nyoo} `lambs', \emph{onyiit} `rib', \emph{onyii}
+`ribs'.
+
+Don't confuse with languages that mark the singular rather than the plural:
+
+Arbore (Ethiopia) is such a language: \emph{tiisin} `a maize cob', \emph{tiise}
+`maize cobs', \emph{nebelin} `an ostrich', \emph{nebel} `ostriches'.
+
+
+\item[] {\bf Compounding:}
+
+black + board = blackboard
+
+
+}
+
+\section{Morphotactics (morphology-syntax/semantics\protect\footnote{It will
+become clear in the coming weeks why we write ``syntax/semantics''.} interaction)}
+\ezimeti{
+\item  Morphotactics is the part of the grammar that regulates the order of
+morphemes.
+For instance in Turkish, the order causative >  passive > aspect > person
+holds, e.g.\ \emph{kand\i{r\i{l}m\i{\c s\i{z}}}}.
+\item Morphotactics involves notions from both syntax and semantics. For
+instance, the reason why passive cannot ``apply'' before causative has a
+syntactico-semantic explanation. 
+}
+\section{Rules and representations in morphology}
+\ezimeti{
+\item Let's take the plural marking in English (N = noun, pl = plural, sg =
+singular):
+
+\ex. N$_{sg}$ + -\emph{s} = N$_{pl}$  
+
+\item We can represent the process in an input/output format:
+
+\ex. \emph{Name of the process}: \emph{input} \sysm{\imp} \emph{output}
+
+\ex. Plural: N \sysm{\imp} N + -\emph{s}
+
+\item Now some more abstraction. Take the following data from Arabic.
+
+\ex.
+\begin{tabular}[t]{llllll}
+ &Root: & slm & &Root: & ktb\\
+a. & muslim & `person of peace' & c. & muktib & `literate person'\\
+b. & salima & `he was safe' & d. & katiba & `he was reading'
+\end{tabular}
+
+\item[] On the surface the rule appears as:
+
+\ex. 
+\a. Person nominalization: slm \sysm{\imp} muslim
+\b. Person nominalization: ktb \sysm{\imp} muktib
+
+\item[] It is not hard to see that there is room for being more general:
+\ex.\label{arabicpers} Person nominalization: C$_1$C$_2$C$_3$ \sysm{\imp}
+\emph{mu}C$_1$C$_2$\emph{i}C$_3$
+
+\item Observe that we have a type of rule which is able to take apart the consonants in
+an Arabic root and store them in variables. Once this is done, with similar
+rules you can perform any operation of shuffling, insertion and/or deletion on
+the input. Also observe that a rule capable of breaking into
+parts a string of an arbitrary length (not just 3) would need to be more
+``intelligent'' than what we have here. We will see such rules in coming weeks.  
+
+\item By the way, can you see an important shortcoming of these rules? 
+
+\item Some crucial information that might be needed by another rule that would
+act on the result of the above rules is missing.
+
+\item Usually morphology is not a business done only for its own sake. Many
+properties that are decided by morphological processes are used by the rules of
+syntax; just like morphology sometimes uses outputs of phonological processes. Therefore
+in a more thoroughly conceived version of \xref{arabicpers}, we would have the information that the
+output is a noun (since the rule is nominalization), so that the upcoming 
+syntactic processes can make a proper use of it. 
+
+}
+\newpage
+\section{Morphophonemics (morphology-phonology interaction) (optional material)}
+\label{morphop}
+
+\ezimeti{ 
+\item As we saw while discussing the notion of allomorphy the
+particular form (the morph) of a morpheme may depend on the particular
+\uterm{environment} of the morph. Rules governing such processes fall within
+\uterm{morphophonemics} (or \uterm{morphophonology}.
+
+\item For a process to fall under morphophonemics it must  refer
+to morphological units like morpheme, stem, affix, and so on, when
+specifying the process. Otherwise processes involving only sound (or form) change
+without reference to morphology falls in the realm of \uterm{phonology}.
+Examples?
+
+\item Let's start with Turkish perfective. The allomorphs are:\\
+$\{${\it -d\i,-di,-du,-d\"u,\mbox{-t\i},\mbox{-ti},-tu,-t\"u}$\}$.
+
+\item[] or\\ \sysm{\crbr{\text{-}\alpha\beta\,|\, \alpha \in \crbr{\text{\it d,t}}, \beta \in
+\crbr{\text{\it \i,i,u,\"u}}}}
+
+
+\item In what follows, we will concentrate on consonants and leave aside vowels
+and vowel harmony. So let $H$ stand for a vowel which is picked from  $\crbr{\text{\it \i,i,u,\"u}}$ according
+to vowel harmony. Also $C$ stands for all the consonants, and $V$, for vowels. 
+By convention, these set names can stand both for the sets and an element picked
+from the sets. The particular sense we are using these symbols will be clear
+from the context. 
+
+\item[] Given these conventions, the allomorphs of Turkish perfective are \{{\it -dH,
+-tH}\}. Now what is the rule that governs whether we have \emph{t} or \emph{d}?
+
+
+\item We are faced with the tasks of specifying:
+\ezimeti{
+\item[A.] which consonant appears in which environments.
+\item[B.] what will be the input to the morphophonemic rule(s).
+}
+
+\item Now, let's make an assumption which has the potential of simplifying
+things. Let's assume that  the following rule attaches an abstract morpheme of
+perfective to a verbal stem. If we can maintain this, our sound changing rules
+do not need to ``know'' about the details of the morphemes. Abstraction for the
+consonants can be accomplished by defining $D$ = \{\emph{t},\emph{d}\}, like we
+did for vowels -- but this time we will specify what $D$ will become
+ourselves.\footnote{Here is an idealization. For the sake of simplicity we will
+treat expressions like \emph{tuhaft\i} comprising of a verb ending with the
+sound `f' and the perfective marker. A more thorough analysis is to have the
+adjective \emph{tuhaf} followed by the copula \emph{i} and the perfective
+marker. Turkish morphophonemics gives the final form \emph{tuhaft\i} to the
+composition of all these.}
+
+\ex. Perfective: Verb \sysm{\imp} Verb + \emph{DH}
+
+
+\item Now we can devise a rule that further specifies $D$ as \emph{t} or
+\emph{d} according to the specific environment. Here is a tentative rule for
+that -- environments are shown by giving a \uterm{context} after the `/'.  
+
+\ex. 
+\a. \morphrule{DH}{tH}{$\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx}
+\b. \morphrule{DH}{dH}{$V$ {\rm or} $C -$ $\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx}
+
+
+\item We can take the $H$ repeated in the input specification to the environment
+specification:
+
+\ex.\label{tenta} 
+\a. \morphrule{D}{t}{$\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx$H$}
+\b. \morphrule{D}{d}{$V$ {\rm or} $C -$ $\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx$H$}
+
+\item We can simplify this rule by assuming that one of \emph{d} and \emph{t} is the
+default case, and it is converted to the other in certain environments. What should
+be the basis of which form to take as the basic? One way to tackle such issues,
+which is quite common in science, is to make an assumption and look at the 
+consequences of this assumption. Let's take \emph{t} as default and see what happens. Our rule
+becomes:
+
+\ex.\label{tasdefault} \morphrule{t}{d}{$V$ {\rm or} $C -$ $\{$p,\c c,t,k,s,\c
+s,f,h$\}$\cntx$H$}
+
+\item This rule changes all the \emph{t}'s to \emph{d}'s if they are found to be
+preceded by a vowel or a consonant from the set specified in the environment
+part and followed by $H$, and leaves untouched other \emph{t}'s. Observe that
+the effect is the same with that of rule \xref{tenta}, but now we have a simpler
+rule.
+
+
+\item One immediate problem with this rule is its behavior in cases like
+\emph{\c sart\i} (as in \emph{\"uyelik \c sart\i}. Our rule would erroneously
+convert \emph{\c sart\i} to *\emph{\c sard\i}.\footnote{To be precise, here we
+assume that $H$ has not been turned to \emph{\i} yet at the time our rule is
+applied. Therefore what happens is: first our rule turns \emph{\c sart$H$} to
+\emph{\c sard$H$}, and the vowel harmony rule, which we leave unspecified here,
+turns this into \emph{\c sard\i}. This is to say that vowel harmony rules apply
+after the rule we are tyring to specify.} This can be avoided by a
+simple modification:  we just make our rule aware of morpheme boundaries so that
+it does not operate on the \emph{t} in \emph{\c sart\i}, which is now \emph{\c
+sart-\i}, and thereby does not match the input specification of our new rule in
+\xref{new}.
+
+
+\ex.\label{new} \morphrule{-t}{-d}{$V$ {\rm or} $C -$ $\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx$H$}
+
+
+\item However, another problem arises in cases like \emph{karar-t\i},
+\emph{\"urper-ti}, and the like. Our rule would erroneously turn these to \emph{karar-d\i} and
+\emph{\"urper-di}, which are, though well-formed, entirely different than what
+we intend. To remedy this, we can make our rule aware of the distinction between
+derivational \versus\ inflectional morpheme boundaries. If we agree that `+'
+signifies derivational, and `-' signifies inflectional boundaries, than our rule
+would not make the changes above, as the actual representations of these are
+\emph{karar+t\i} and \emph{\"urper+ti}.
+
+\item It is crucial to observe the chain of reasoning which lead us from the
+decision to take \emph{t} as the default, to the conclusion that our rules need to be
+aware of the derivation \versus\ inflection distinction. Now let us
+\uterm{backtrack} to an earlier decision point, retract our ``\emph{t} is
+default'' assumption and instead take \emph{d} as the default.  Now the rule
+becomes:
+
+
+\ex.\label{dasdefault} \morphrule{-d}{-t}{$\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx$H$}
+
+
+\item To the best of our knowledge, \xref{dasdefault} does not run into the
+problem we had with default \emph{t} in the face of expressions like
+\emph{karart\i}. In other words, our conjecture is that there will be no cases
+where a \emph{d} right after a morpheme boundary would erroneously be turned to
+\emph{t}. Of course the rule would need to be revised upon encountering a
+possible counterexample.
+
+\item The above observation, if correct, also frees our hands of the
+derivational \versus\ inflectional morpheme distinction. The `-' can now mean
+``any morpheme boundary''. Upon closer inspection perhaps we may even drop the
+morpheme boundary sign, but we will not pursue this investigation here. 
+
+
+% \ex.\label{tentb}
+% \a. \morphrule{-DH}{-tH}{$\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx}
+% \b. \morphrule{-DH}{-dH}{$V$ {\rm or} $C -$ $\{$p,\c c,t,k,s,\c s,f,h$\}$\cntx}
+% 
+% \item This still leaves some possibility of overgeneration. Can you see how?
+% 
+% \item In order to avoid this overgeneration, our rules should be made aware of the distinction
+% between derivational \versus\ inflectional morphemes. Let's agree that `+'
+% designates a derivational, and `-' an inflectional boundary. Our rules stay the
+% same, but now their meaning is different.
+% 
+% \item Now the rules for the perfective in \xref{tentb} would not affect
+% `\emph{avun}+\emph{DH}', `\emph{kas\i{}n}+\emph{DH}',
+% and so on, as it will ``realize'' that these are meant to be derivations --
+% formations of new words -- rather than inflections. I leave as an exercise to
+% characterize the rule for the derivations just mentioned.  
+
+\item There is still room for further simplification, this time of a different
+character. The simplification involves finding a \uterm{natural class} for the set of
+consonants in the environment specification of the rule, something that serves a common
+denominator for the consonants in the list, by the use of which we can represent
+all of them at once. For that, we need to digress a little. 
+
+
+\item[] {\bf Very basic phonetics/phonology:}
+
+\item Think of a consonant, say \emph{t} or \emph{b}, as being specified by three
+\uterm{features}: (i) where (\uterm{place}) in the vocal tract it is articulated
+(alveolar, dental, glottal, and so on), (ii) how (\uterm{manner}) it is
+articulated (fricative, plosive, nasal, and so on); and (iii) whether the vocal
+chords are involved or not (\uterm{voice}). A particular consonant can be
+represented as a set of features.
+
+\item For example, \emph{t} and \emph{d} are both ``alveolar plosives'',
+articulated by restricting (hence plosive) the air flow by tongue and alveolar
+ridge (hence alveolar). The former is voiceless, while the latter is voiced.
+More formally, \emph{t} is \{[place alveolar],[manner plosive],[voice -]\},
+while \emph{d} is \{[place alveolar],[manner plosive],[voice +]\}. We adopt
+a abbreviating convention, where we omit the words ``place'' and ``manner'' and
+write `[+voice]' instead of `[voice +]', etc. 
+
+\item Returning to our track, the set of consonants that call for a \emph{d} to
+\emph{t} conversion in
+\xref{dasdefault}  is the class of voiceless consonants (of Turkish)([-voice]). If we
+designate this set as $C_{\text{[-voice]}}$, then the rule becomes:
+
+
+\ex.\label{voice} \morphrule{-d}{-t}{$C_{\text{[-voice]}}$\cntx$H$}
+
+
+% \item An important \emph{type} of simplification involves the choice of the underlying
+% form. Let's see what we gain by taking one of the morphs as the underlying form
+% and resort to change only when it is needed. Which one would you take as the
+% underlying form, \emph{t} or \emph{d}?
+% 
+% \ex. \morphrule{-dH}{-tH}{$C_{\text{[-voice]}}$\cntx}
+% 
+% \item Now we have a fairly simple rule -- but isn't there room for more
+% generalization?
+
+\item To further generalize our rule, observe the use of suffixes for locative (\emph{-de,-da,-te,-ta}),
+adjective forming (\emph{-ken,-kan,-gen,-gan}), occupational (\emph{-cH,-\c{c}H}).
+Again the consonants are alternating between voiced and voiceless variants of the
+same type. Therefore, why not have rules like the following, entirely leaving the
+consideration of ensuing vowels out:
+
+\ex. \morphrule{-d}{-t}{$C_{\text{[-voice]}}$\cntx}
+
+\ex. \morphrule{-g}{-k}{$C_{\text{[-voice]}}$\cntx}
+
+\ex. \morphrule{-c}{-\c c}{$C_{\text{[-voice]}}$\cntx}
+
+\item Would it be possible to collapse these rules into one? Actually same thing
+is going on in all of them. What is that?
+
+\item First, let's agree that all the vowels are [+voice] by definition. 
+
+\item[] Second, let's agree to use  variables that can stand for the values of
+features, the minus or plus signs for voice, glottal, dental, etc. for place,
+and so on. 
+
+\item[] Third, let's use `?' as the value of a feature, whose value we do not
+care -- whatever comes in its place is fine for us. 
+
+\item[] Forth, let's define a \emph{meta} feature `[cons. +]' or `[cons. -]',
+which is possessed by all consonants.\footnote{One way to define is to introduce
+a conditional rule: If a feature set $F$ has at least one feature which can only be
+possessed by consonants, add `[cons. +]' to $F$, otherwise add `[cons. -]'.} 
+
+\item[] Now, all this in place, we can state:
+{\footnotesize
+\ex.\label{varrule} \morphrule{-{\rm \{[+cons.],[?voice]\}} $\cup\, A$}{{\rm -\{[+cons.],[$\alpha$voice]\} $\,\cup\, A$}}{$Z\, \cup$  {\rm \{[$\alpha$voice]\}}\cntx}
+
+}
+\item Let's look at what's going on in \xref{varrule} in detail. First our
+underlying form, which is the input to our rule, leaves the voice feature of the
+consonant \uterm{underspecified}. This is to say that whether the consonant will
+be voiced or not is left to \xref{varrule} to decide. Our rule says that the
+voice feature of the initial consonant of a morpheme has to be same with the
+voice feature of the consonant preceding the morpheme boundary. 
+
+\item This move brings a huge simplification to our morphophonemics, but there
+is a complication, namely, the problem with \emph{karart\i}, \emph{\"urperti}
+came back. What is more, this time we cannot solve the problem by counting on
+the derivation \versus\ inflection distinction, since our generalization about
+voice was meant to apply to both cases. At this point one need to decide whether
+to keep the generalization in \xref{varrule} or not. If one decides to keep,
+then a way of covering the ``exceptional'' case of \emph{karart\i} needs to be
+found. Maybe there is ``something'' in that case that makes the morphophonemics
+behave differently. The task would be to find that ``something'' and revise the
+rules so that they become ``aware'' of the necessary distinction. I leave the
+further development of the account as an exercise for the interested.   
+
+\item So far we have seen rules that modify a sound or an underlying form. One
+can also devise rules that insert and/or delete -- even shuffle -- sounds. It is
+also possible to write rules that are sensitive to syllable boundaries or any
+other information. Just don't forget that any extra information you introduce
+needs to be justified on the grounds that it is required for a correct and/or
+simple account of the phenomenon.
+
+\item When you try other examples, you will realize that in most cases rules
+should be ordered. For a very simple instance, rules that delete the `+'s and
+`-'s in the input should come last.
+
+\item Finally, there is still room for improvement in the rule schema we have used. We
+will come back to it after we have a more formal look at the subject in the next
+weeks.
+
+\hrulefill
+\begin{uexercise}
+\ezimeti{
+\item[]
+\item[i.]
+In our first lecture we observed that when the accusative case marker is
+suffixed to a possesive compound (e.g.\ \emph{trafik cezas\i}), the sound
+\emph{n} needs to be inserted in between. Give an account of this process. One crucial
+question is whether the \emph{n} is part of the accusative marker or the
+possessive suffix. 
+
+\item[ii.]\label{trredup}
+Give an account of emphatic reduplication in Turkish, e.g.\
+\emph{sar\i{}}\sysm{\imp}\emph{sapsar\i}, \emph{ye\c sil}\sysm{\imp}\emph{yemye\c sil}, and so on.
+}
+\end{uexercise}
+
+\hrulefill
+}
+
+\end{document}
