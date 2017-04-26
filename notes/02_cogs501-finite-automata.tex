@@ -690,25 +690,19 @@ that the state transition function stays the same.}
   \node[initial,state]  (0)                       {$q_0$};
   \node[state,accepting](1) [above right of=0]	  {$q_1$};
   \node[state]			(2) [right of=1]	      {$q_2$};
-  \node[state,accepting](3) [right of=2]          {$q_3$};
-  \node[state,accepting](4) [below right of=0]    {$q_4$};
-  \node[state]          (5) [right of=4]          {$q_5$};
-  \node[state,accepting](6) [right of=5]          {$q_6$};
+  \node[state,accepting](3) [below right of=0]    {$q_3$};
+  \node[state]          (4) [right of=3]          {$q_4$};
 
   \path (0) edge					node {$0$}					(1);
-  \path (0) edge					node {$1$}					(4);
+  \path (0) edge					node {$1$}					(3);
   \path (1) edge	[loop above]	node {$0$}					(1);
-  \path (1) edge		node {$1$}					(2);
+  \path (1) edge	[bend left]		node {$1$}					(2);
+  \path (2) edge	[bend left]		node {$0$}					(1);
   \path (2) edge	[loop above]	node {$1$}					(2);
-  \path (2) edge	[bend left] 	node {$0$}					(3);
-  \path (3) edge	[loop right] 	node {$0$}					(3);
-  \path (3) edge	[bend left] 	node {$1$}					(2);
-  \path (4) edge	[loop below]	node {$1$}					(4);
-  \path (4) edge			node {$0$}					(5);
-  \path (5) edge	[loop below]	node {$0$}					(5);
-  \path (5) edge	[bend left] 	node {$1$}					(6);
-  \path (6) edge	[loop right] 	node {$1$}					(6);
-  \path (6) edge	[bend left] 	node {$0$}					(5);
+  \path (3) edge	[loop below]	node {$1$}					(3);
+  \path (3) edge	[bend left]		node {$0$}					(4);
+  \path (4) edge	[bend left]		node {$1$}					(3);
+  \path (4) edge	[loop above]	node {$0$}					(4);
 \end{tikzpicture}
 }}}
 
