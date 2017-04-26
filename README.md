@@ -22,7 +22,7 @@ of the course.
 - [General introduction](https://github.com/umutozge/cogs501/blob/master/notes/00_cogs501-general-introduction.pdf)
 - [Basics of formal languages + regular languages](https://github.com/umutozge/cogs501/blob/master/notes/01_cogs501-regular-languages.pdf)
 - [Finite automata](https://github.com/umutozge/cogs501/blob/master/notes/02_cogs501-finite-automata.pdf)
-- Natural language morphology
+- [Natural language morphology](https://github.com/umutozge/cogs501/blob/master/notes/02_cogs501-morphology.pdf)
 - Morphology and computation
 - Grammars, derivations, context-free languages
 - Natural language syntax
