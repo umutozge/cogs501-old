@@ -24,7 +24,7 @@ of the course.
 - [Finite automata](https://github.com/umutozge/cogs501/blob/master/notes/02_cogs501-finite-automata.pdf)
 - [Natural language morphology](https://github.com/umutozge/cogs501/blob/master/notes/02_cogs501-morphology.pdf)
 - Morphology and computation
-- Grammars, derivations, context-free languages
+- [Grammars, derivations, context-free languages](https://github.com/umutozge/cogs501/blob/master/notes/02_cogs501-context-free-languages.pdf)
 - Natural language syntax
 - Syntax and computation
 - Beyond context-freeness
