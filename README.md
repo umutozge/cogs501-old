@@ -25,7 +25,7 @@ of the course.
 - [Natural language morphology](https://github.com/umutozge/cogs501/blob/master/notes/03_cogs501-morphology.pdf)
 - Morphology and computation
 - [Grammars, derivations, context-free languages](https://github.com/umutozge/cogs501/blob/master/notes/04_cogs501-context-free-languages.pdf)
-- Natural language syntax
+- [Natural language syntax](https://github.com/umutozge/cogs501/blob/master/notes/05_cogs501-syntax.pdf)
 - Syntax and computation
 - Beyond context-freeness
 - Turing machines   
