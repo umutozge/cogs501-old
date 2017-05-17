@@ -1,0 +1,689 @@
+\documentclass[11pt]{article}
+
+\usepackage[nohide]{ulecnot}
+\usepackage{tipa}
+
+\usepackage{tikz-qtree}
+
+\pagestyle{fancy}
+\lhead{COGS 501 -- Linguistics and Formal Languages}
+\chead{Syntax}
+\rhead{Fall 2016}
+\lfoot{Umut \"Ozge}
+\cfoot{\emph{Last updated} \today}
+\rfoot{Page \thepage/\pageref{LastPage}}
+\setlength{\headheight}{13.6pt}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{linguex}
+	\renewcommand{\refdash}{}
+\usepackage{natbib,unatbib}
+
+\begin{document} \section{Introduction}
+\begin{itemize}
+\item A grammar is a system of rules and representations that determine
+how sound is related to meaning. 
+
+\item Syntax lies at the core of grammar.
+
+\item This specification of sound-meaning relation is usually thought in two
+steps; first the syntactically well-formed expressions are specified, then how
+these well-formed expressions are to be understood is specified. This type of
+characterization is sometimes followed by the misleading statement that only the
+first part falls within the domain of syntax. In whichever
+way stated, remember that what we mean by grammar and syntax encompasses all the
+way from form (sound) to meaning, it is never only the specification of form.
+
+\item  The task of a grammar is not just specifying the grammatical sentences
+of a language, it also needs to assign the \emph{right structure} to them, so that it
+constitutes an account of what the speakers understand from the sentences. 
+
+\item Consider the following pair of sentences, which look so alike in structure, but are
+they so?
+
+
+\ex. 
+\a. I persuaded John to leave.
+\b. I expected John to leave.
+
+
+\item Let's take the following example and see what should a successful grammar
+specify about this sentence?
+
+\ex.  It was Bill who John could have persuaded to examine himself.
+
+\begin{uexercise}
+
+Try to specify the rules that govern which expression in the first set goes with
+which in the second.
+
+
+\ex. Ahmet'in eve \altset{	\text{geldiğini}\\ 
+							\text{geleceğini} \\
+							\text{gelmesini} \\ 
+							\text{gelişini}} 
+							\altset{\text{özlüyorum.}\\
+									\text{bekliyorum.}\\
+									\text{istiyorum.}\\
+									\text{biliyorum.}}
+
+
+\end{uexercise}
+
+% \item \emph{Grammar} versus \emph{syntax}.
+% \item \emph{Description} versus \emph{Explanation}.
+% \item Structure beyond word-level(!).
+\end{itemize} 
+
+\section{Word classes}
+
+\ezimeti{
+\item Why do we need word classes?
+\item The reason is the same as why we need to categorize morphemes.
+\item Word classes has three bases: 
+\ex.
+\a.		 morphosyntactic: the same morphological processes are applicable to
+		to the members of a class;
+\b.  distributional: the members of a class are interchangeable in a
+		given slot of a sentence or a phrase (what we mean by ``phrase'' will
+		come below).
+\b. functional: the members of a class have the same type of
+		contribution to the meaning of a sentence or phrase.
+
+
+\item Most basic distinction is \uterm{lexical} versus \uterm{functional}
+categories. 
+	\item[] Lexical categories are rich in semantic content. E.g.\ noun, verb,
+	adjective, adverb.
+	\item[] Functional categories carry grammatical information that pertains to
+	the organization of how expressions come together and how their meanings are
+	composed to arrive at more complex meanings. E.g.\ prepositions,
+	conjunctions, articles, and so on. 
+
+\item Another distinction is between \uterm{closed-class}  versus
+\uterm{open-class} words.
+
+\item In most of the cases lexical categories are open, and functional
+categories are closed; but there are exceptions.
+
+}
+
+\subsection{Verbs}
+
+\ezimeti{
+
+\item {\bf Function:} predication of a state, event, situation,
+process, and so on. A general expression that is proposed to cover all these
+types of objects is \uterm{eventuality}.
+
+\item {\bf Distribution:} Verbs come in subclasses that determine their
+distribution. 
+	\ezimeti{
+		\item Intransitive verbs have a single \uterm{argument}.
+		\exg. Bh\'eic s\'e. \\
+			sneezed he\\
+			`He sneezed.'\hfill (Irish)
+
+		\ex. \"O\u grenciler hap\c surdu(lar).
+
+	
+		\item Transitive verbs have two,
+
+
+		\exg. Bhris s\'i an chathaoir. \\
+			break.PAST she the chair\\
+			`She broke the chair.'\hfill (Irish)
+		
+		\item Ditransitive verbs have three.
+
+		\exg. human rassal-o makt$\bar{\text{u}}$b  le \textipa{P}ab$\bar{\text{u}}$-hum \\
+			they send.PAST-3PL letter to father-their\\
+`They sent a letter to their father.' \hfill (Chadian Arabic)
+
+
+\item[] Some ditransitives have a transitive usage as well,  e.g.\ \emph{buy},
+\emph{sell}, but not \emph{hand}.	
+
+\item[] And some verbs can be both intransitive and tranitive, e.g.\
+\emph{cook}, \emph{sing}, and so on.
+	} 
+
+
+\item {\bf Morphosyntax:} 
+\ezimeti{
+	\item \uterm{Tense} locates an eventuality in time; 
+
+	\ex.
+	\a.  {\bf ga}-\v ciux `He did it some time ago.'  \hfill (Chinook)
+	\b. {\bf ni}-číux `He did it long ago.' 
+	\b. {\bf na}-čiúx$^\text{w}$-a `He did it recently.'
+	\b. {\bf i}-číux  `He just did it.'
+
+
+	\item \uterm{Aspect} specifies the extent of an eventuality, e.g.\ whether
+	it is completed, continuing, iterating, and so on; 
+
+	\ex. 
+	\a. ba-{\bf léé}-bomba  `They are working.’ (progressive)
+    \b. ba-{\bf là}-bomba `They repeatedly work.’ (habitual)
+
+	\item \uterm{Mood} indicates actuality, possibility, probability, certainty,
+	and so on, of a proposition.  These categories are expressed with \uterm{modal auxiliaries} in
+	Germanic languages (English, German\ldots). They are expressed in verbal
+	morphology in Turkish and many other languages. Some people include the category of
+	\uterm{evidentiality} -- marking the indirect knowledge of a proposition -- under mood as well. 
+
+
+	\item \uterm{Valency changing processes} like \uterm{passive},
+	\uterm{causative} and \uterm{reflexive} are usually indicated in verbal morphology.
+
+	\ex. 
+	\a. Adam k\"ope\u gi  y\i{}kad\i{}.
+	\b. Adam y\i{}kand\i{}. \hfill (reflexive or passive)		
+ 	\b. Adam  k\"ope\u gi y\i{}katt\i{}. \hfill (causative)
+	\b. *Adam k\"ope\u gi y\i{katt}\i{r}\i{ld}\i.
+	\b. Adam  k\"ope\u ge y\i{kat}\i{ld}\i.
+	\b. Adam k\"ope\u ge y\i{katt}\i{r}\i{ld}\i. \hfill (?)
+
+
+	\item \uterm{Agreement} morphology on the verb marks the person, gender
+	and/or  number of some (or all) of the arguments. 
+	
+		\exg. Nyuna na-tinu-nya na lau\\
+		she 3SG.SU-weave-3SG.OBJ the sarong\\
+		`She weaves the sarong.'\hfill (Kambera)
+
+
+	}
+}
+
+
+\subsection{Nouns}
+\ezimeti{
+\item {\bf Function:} Noun phrases provide the arguments of a verb, specifying the
+\uterm{semantic roles} in the eventuality expressed by the verb.
+
+% \begin{uexercise}
+% 
+% Match the nouns in the sentences with the roles in the table. 
+% 
+% 
+% \fbox{
+% \begin{tabular}{lllll}
+% experiencer &theme      &   stimulus & patient &  instrument \\
+% experiencer  &recipient &   stimulus & patient &  agent 
+% \end{tabular}
+% }
+% \end{uexercise}
+
+\ex. 
+\ag. Lee handed {the letter} to Kim. \\
+	\textsc{Agent}  {\ } \textsc{Theme} {\ }  \textsc{Recepient} \\
+\bg. Kim detests sprouts. \\
+\textsc{Experiencer} {\ } \textsc{Stimulus}\\
+\bg. Spiders frighten Lill.\\
+\textsc{Stimulus} {\ } \textsc{Experiencer}\\
+\bg. The flowers wilted.\\
+\textsc{Patient} \\
+\bg. {The ball} broke {the window}.\\
+\textsc{Instrument} {\ } \textsc{Patient}\\
+
+
+
+
+\item {\bf Distribution:} Every noun phrase appears in one of a number of
+\uterm{grammatical relations}, like \uterm{subject}, \uterm{direct object},
+\uterm{indirect object}, and so on.
+ 
+\item[] In English you can spot subjects  by the position of the noun phrase, by
+looking at which argument the verb agrees with, and so on.
+% and from the form of the
+% pronouns when the verb or auxiliary is finite -- we will come to what is meant
+% by ``finite''.
+
+
+\ex. 
+\a. This woman buys all the best apples.
+\b. All those people are enjoying our apples.
+\b. Apples were grown in that orchard.
+\b. Apples, she really enjoys.
+
+
+
+\item It is important to note that the relation between grammatical relations
+and semantic roles is quite complex.
+% -- we will return to this issue.
+
+\item {\bf Morphology:} Nouns and noun phrases in most languages carry a
+selection of these grammatical categories:
+
+\ezimeti{
+\item \uterm{number};
+\item \uterm{gender} (or class), which may have no semantic correlate;
+\item \uterm{case} is a rather direct indicator of grammatical relations (Tr.\ ``ismin
+halleri''). But not every case signals the same grammatical relation in every
+language that has it (E.g.\ Icelandic has accusative subjects).
+}
+
+\item Another word class that is closely related to nouns and noun phrases is
+\uterm{determiners}, which contains articles (\emph{the paper}, \emph{a cat},
+demonstratives (\emph{this cat}),
+\emph{wh}-determiners (\emph{which cat}), quantifiers (\emph{every cat},
+\emph{some cat(s)}), possessive determiners (\emph{my cat}), determiner
+pronouuns (\emph{we cats}, \emph{you linguists}).
+
+
+} 
+\subsection{Adjectives}
+
+\ezimeti{
+\item {\bf Function:}  Adjectives can be \uterm{predicative} or
+\uterm{attributive}.
+\item[] Attributive adjectives directly modify a noun.
+\item[] Predicative adjectives occur in contexts like the following:
+
+\ex.
+\a. He felt \cntx.
+\b. She seems \cntx.
+\b. I find it \cntx to think she's an acrobat.
+
+\item {\bf Distribution:}  Adjectives can be modified with \uterm{intensifiers}
+like  \emph{very}, \emph{quite}, \emph{too}, \emph{rather}, \emph{somewhat},
+\emph{enough}. 
+
+\item {\bf Morphology:}  Adjectives can appear in \uterm{comparative} and
+\uterm{superlative} forms.
+
+
+\begin{uexercise}
+
+Does Turkish have distinct classes of nouns and adjectives?
+
+\end{uexercise}
+
+}
+
+\subsection{Adverbs}
+
+\ex. 
+\a. This [strangely sad] song.
+\b. She spoke [strangely lucidly]. 
+\b. She spoke strangely.
+
+
+\ezimeti{
+\item Functionally, adverbs modify the eventuality, rather than its
+participants.
+\item Adverbs do not differ from adjectives in form in some languages.
+}
+
+\subsection{Adpositions}
+\ezimeti{
+\item Adpositions mainly code information on time, location and manner. 
+\item Some languages put adpositions before their arguments
+(\uterm{prepositions}) and some put them after (\uterm{postpositions}).  
+}
+
+\section{Sentence structure}
+
+\ezimeti{
+
+\item The \uterm{clause} is a technical linguistic abstraction based on the
+classical notion of a sentence, according to which a sentence is the result of
+bringing together a subject and a predicate. 
+
+\item There are different sub-types of clauses. Those where the verbal element
+has or lacks grammatical information like tense, agreement, etc., those with or
+without subjects, and so on. We will not be concerned with sub-typing of
+clauses in detail.
+
+\item A sentence is a structural organization of one or more clauses. A
+\uterm{simplex} sentence has one clause, while a \uterm{complex} sentence has
+more.
+
+
+
+}
+
+\subsection{Coordination and subordination}
+
+\ezimeti{
+\item The structurally simplest way of forming a complex clause is to
+\uterm{coordinate} (or \uterm{conjoin}) two clauses by coordinating
+conjunctions like the English \emph{and}, 
+\emph{but}, or \emph{or}. Note that putting a
+logical disjunction like \emph{or} is also conjoining.
+
+\item In coordinating conjunctions, the conjuncts are syntactically on equal
+terms. 
+\item[] For instance, modulo pragmatic concerns, the order of the conjuncts does
+not affect grammaticality.
+
+
+\item In \uterm{subordination} of two clauses, there exists a structural
+asymmetry between the clauses. 
+
+\item[] {\bf Complement clauses:}
+
+\ex.
+\a. My friend claimed [(that) Ceri liked chips].
+\b. I wondered [whether/if Lee had gone].
+\b. They want [to leave before breakfast].
+\b. [That Chris liked Lee so much] really surprises me.
+\b. [For Mel to act so recklessly] shocked everyone.
+
+\item One of the clauses (\uterm{complement clause}) appears as the complement
+(or the argument) of the verb of another clause (\uterm{matrix} or \uterm{root} clause). Another
+term for the relation is that the complement clause is \uterm{embedded} under
+another clause.
+
+\item Having clauses as components of other clauses is a typical instance of
+\uterm{recursion} in natural languages, which is one source of structural
+\uterm{hierarchy}. Theoretically three is no limit to the number of \uterm{levels of embedding}.
+
+\ex. They want [to know [whether we’d expect [to leave before breakfast]]].
+
+\item When we come to the topic of constituency, we will have a more solid
+foundation for positing a hierarchical syntactic structure. 
+
+
+\item[] {\bf Adjunct (or adverbial) clauses:}
+
+\ex. 
+\a. Mel will be there [when she’s good and ready].
+\b. [If you’re leaving early], please get up quietly.
+\b. [Kim having left early], we drank her beer.
+
+
+\item These are optional subordinations; they give extra information, but not
+required for a syntactically complete sentence.
+
+% \item Certain grammatical processes are sensitive to matrix versus
+% subordinate clause distinction. 
+% \item[] One example is basic word order (German, Breton). 
+% 
+% \item[] Another is the subject/auxiliary inversion and tag questions in English.
+
+}
+
+\section{Constituency and phrase structure}
+\subsection{Motivation for constituent structure}
+
+\ezimeti{
+\item {\bf Motivation 1:} A primary indication of the fact that linguistic expressions are structured into
+constituents is the notion of structural ambiguity.
+
+\ex.\label{glob} I saw the man with the telescope.
+
+\ex. \label{loc} Because the man that the police interrogated didn't call his lawyer was concerned.
+
+\item Example \xref{glob} is \uterm{globally} ambiguous, while \xref{loc} is
+\uterm{locally} ambiguous.
+
+\item In \xref{glob} each \uterm{reading} corresponds to a different
+\uterm{constituent structure}.
+
+\item Here are the two structures for \xref{glob}:
+\ezimeti{
+\item[S1:]
+
+\Tree [.$X_1$  I [.$X_2$ saw [.$X_3$ \edge[roof]; {the man with the telescope} ]]]
+
+\item[S2:]
+
+\Tree [.$X_1$  I [.$X_2$  [.$X_3$ saw [.$X_5$ \edge[roof]; {the man} ]]
+ [.$X_4$ \edge[roof]; {with the telescope} ] ]]
+}
+
+\item As can be seen in the \emph{telescope} example, constituency is not a
+property of strings alone. It makes sense to talk about constituency only in the
+context of a structural description, which represents a certain interpretation
+of the given expression.
+
+\item {\bf Motivation 2:} Another motivation for constituency is that certain
+syntactic operations and constraints refer to constituents; in other words,
+there are generalizations that are best expressed in terms of constituents.
+We will see some of these below when we discuss constituency tests. 
+}
+
+\subsection{Constituents and phrases}
+
+\ezimeti{
+
+\item Basics of trees:
+	\ezimeti{
+	\item a node $A$ dominates a node $B$ iff either $A$ is
+		$B$ or there is a path from $A$ to $B$, such that moving along this path
+		increases your distance from the root.
+	\item the distance from a node $A$ to $B$ is the number of intervening edges
+	along the shortest path from $A$ to $B$.
+	\item root is the node that dominates every other node but is not dominated
+	by any.
+	\item two types of nodes: terminal and non-terminal.
+	}
+
+\item A maximally large sequence of terminals dominated 
+by a single node is a constituent.
+
+\item Just like morphological rules need to know word classes like verb, noun,
+and so on, syntactic rules need to know phrase classes like verb phrase, noun
+phrase, prepositional phrase, and so on.
+
+\item A \uterm{phrase} is a structural organization of a \uterm{head}, it's
+\uterm{complements} (or \uterm{dependents}), and a number of optional
+\uterm{modifiers} (or \uterm{adjuncts}).
+
+\item[] Here is a noun phrase first without, then with adjectival modification -- let's take the determiner to be a modifier of
+the noun:
+
+
+\parbox[t]{.1\textwidth}{
+\Tree [.NP [.Det the ]
+			[.N book ] ]
+
+} 
+\parbox[t]{.1\textwidth}{
+\Tree [.NP [.Det the ]
+		   [.N 
+				[.Adj blue ]	
+				[.N book ] 
+		   ]
+	  ]
+}
+
+\item[] Now a verb phrase, again without and with modification:
+
+\parbox[t]{.17\textwidth}{
+\Tree [.VP [.V read ]
+	  		[.NP [.Det the ]
+		   		[.N 
+					[.Adj blue ]	
+					[.N book ] 
+			   ]
+		    ]
+	]
+}
+\parbox[t]{.1\textwidth}{
+\Tree [.VP 
+		[.VP [.V read ]
+	  		[.NP [.Det the ]
+		   		[.N 
+					[.Adj blue ]	
+					[.N book ] 
+			   ]
+		    ]
+		]
+		[.Adv quickly ]
+	]
+}
+
+\item The above trees simplify the structure by treating Adj and Adv as
+non-phrasal. But they can have modifiers and complements as well. 
+
+\Tree [.VP 
+		[.VP [.V read ]
+	  		[.NP [.Det the ]
+		   		[.N 
+					[.AdjP [.Adv faintly ] [.Adj blue ] ] 
+					[.N book ] 
+			   ]
+		    ]
+		]
+		[.AdvP [.Adv extremely ] [.Adv quickly ] ]
+	]
+}
+
+\subsection{Constituency tests}
+\ezimeti{
+\item[] {\bf Sentence fragment test:}
+
+\item[] Any expression that can be put as an answer to a \emph{wh}-question
+(=a question involving \emph{what}, \emph{which}, \emph{who}, and so on) is a
+constituent.
+
+\ex.
+\a. Kim wrote that book with the blue cover.
+\b. Kim bought that book with her first wages.
+
+\ex.
+\a. What did Kim write?
+\b. That book with the blue cover.
+
+\ex.
+\a. What did Kim buy?
+\b. *that book with her first wages. 
+
+\item[] {\bf Echo question test:}
+
+\ex.
+\a. *Kim wrote {\bf what} with the blue cover?
+\b. Kim bought {\bf what} with her first wages?
+
+\ex. Kim wrote that {\bf what} with the blue cover?
+
+
+\item[] {\bf The cleft test:}
+
+\ex. 
+\a. Kim wrote that book with the blue cover.
+\b. Kim bought that book with her first wages.
+
+\ex.
+\a. It was [that book with the blue cover] that Kim wrote
+\b.  *It was [that book with her first wages] that Kim bought.
+
+\item[] {\bf Ellipsis test:}
+
+\ex.
+\a. John wrote a book last year. Jane did so (too).
+\b. John wrote a book last year. Jane did so the year before.
+
+
+\item[] What can the following sentence mean?
+
+\ex. John saw the man with the telescope, Jane did so with the monocular.
+
+\ex. 
+\a. John sent a book to Jane. Irma did so to Harry.
+\b. *John asked Bill to send a book to Jane. Irma did so to Harry.
+
+\ex.
+\a. Ali hızlı araba kullanıyor; Mehmet yavaş.
+\b. ??Ali hızlı araba kullanıyor; Mehmet motosiklet.
+
+\ex.
+\a. Ahmet Veli'yi Aylin'e şikayet etii; Hasan da Sevgi'yi öyle.
+\b. ??Ahmet Veli'yi Aylin'e şikayet etii; Hasan da Bilge'ye öyle.
+
+\begin{uexercise}
+Work out the constituent structure of the following sentences by
+constituency tests:
+\begin{enumerate}
+\item My brother wrote down his address.
+\item My brother applied for this job.
+\item John expected Jane to leave.
+\item John promised Jane to leave. 
+\end{enumerate}
+\end{uexercise}
+
+\item[] {\bf Coordination test:}
+
+\item[] Only constituents having the same syntactic category can get combined via coordinating conjunctions.
+}
+
+% \section*{Self study}
+% 
+% The material we have covered and some more can be reviewed by reading Chapters 2, 3,
+% 5 of \ctnm{tallerman11}. 
+
+
+\bibliography{ozge}
+\bibliographystyle{apalike}
+\end{document}
+
+
+\section{Heads and Dependents}
+
+Tie this to configuration through order and hierarchy -- also tie this to why we
+do not simply and only have semantics.
+
+
+\section{Heads and Dependents}
+
+Three types Tallerman p. 111:
+\ex.
+\a. the selection of a specific type of argument by a head
+\b. agreement: the copying of features froma head to its dependents
+\b. government by a head
+
+
+
+
+\section{Encoding dependency: case, agreement, configuration}
+
+Start with Turkish, then German, than English/German/Turkish for agreement.
+
+State that there are languages that have more than subject agreement, and there
+are languages that have no agreement. 
+
+Tallerman agreement example from the language where agreement depends on the
+word order. The L is basically SVO, where the verb agrees only with the subject;
+but when the order becomes SOV or OSV, then there is object agreement as well.
+
+Tallerman p. 210 Icelandic excercise is very nice, there is an agreement
+triggered by a PRO subject in the embedded clause. Icelandic is also
+interesting in explaining that case-semantics connection is not
+straightforward.
+
+You can use Tagalog (Tallerman 196-7) to show how creative linguistic system can
+be.
+
+
+\section{Semantic Roles}
+
+First adapt the list on Tallerman p.46 to give the notion of semantic roles.
+
+
+\section{Grammatical Relations}
+
+Structural indicators: case, agreement, configuration (order and hierarchy).
+
+Case:
+
+Talk about the relation between case and word-order flexibility.
+
+
+\section{Syntax-Semantics interface}
+
+Semantics/Syntax relation is not direct -- use theta roles on p. 46 of Tallerman
+to motivate this.
+
+Activity: compile grammar from Google translate, either for a given fragment, or
+a fragment of your choice.
+
+Tallerman p.237 complex (non-compositional) person agreement morphemes. 
+
+\bibliography{ozge}
+\bibliographystyle{apalike}
+\end{document}
